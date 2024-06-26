@@ -1,0 +1,439 @@
+@font-face {
+    font-family: caligsa;
+    src: url(Fuentes/calisga-calisga-400.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+header{
+    background-image: url(Imagenes/Fondov2.jpg);
+    background-size: cover;
+    height: 1080px;
+}
+
+
+
+/*------------------MENU---------Y---------BOTONES-----------*/
+
+
+
+nav a.activo {
+    padding: 10px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+nav a,
+.footerInfoContenedorB a {
+    text-decoration: none;
+    color: rgb(196, 196, 196);
+    font-size: 20px;
+    padding: 10px;
+}
+
+nav a:not(:has(img)):hover,
+.footerInfoContenedorB a:hover {
+    padding: 10px;
+    border-bottom: solid;
+}
+
+.cctWhiteHeader,
+.cctBlack {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 25px;
+    padding: 8px 12px;
+    border-style: solid;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.cctWhiteHeader:hover {
+    color: black;
+    border-color: whitesmoke;
+    background-color: whitesmoke
+}
+
+.cctBlack {
+    color: black;
+}
+
+.cctBlack:hover {
+    color: whitesmoke;
+    background-color: black;
+}
+
+.cctWhite20 {
+    text-decoration: none;
+    color: lightgray;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    display: inline;
+    padding: 5px 10px;
+    width: auto;
+}
+
+.cctWhite20:hover {
+    color: whitesmoke;
+    border-color: lightgray;
+    background-color: lightgray;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu img {
+    width: 150px;
+}
+
+.menu ul{
+    list-style: none;
+    display: inline-block;
+}
+
+.menu li{
+    margin: 10px;
+    padding: 20px;
+    display: inline-block;
+    justify-content: flex-end;
+}
+
+#principal {
+    padding: 8rem 0rem 0rem 15rem;
+}
+
+#principal > div{
+    max-width: 500px;
+}
+
+
+
+/*------------------SECCIONES------------------------*/
+
+
+
+#acercaNuestro,
+#nuestrosServicios,
+#nuestrosProyectos,
+#sobreNosotros,
+#contactanos,
+#infoServicios,
+#nuestrosProyectos {
+    margin-top: 0;
+    text-align: center;
+}
+
+#nuestrosServicios {
+    background-color: rgb(241, 241, 241);
+    padding-top: 10px;
+}
+
+#infoServicios,
+#nuestrosProyectos {
+    background-color: whitesmoke;
+}
+
+#nuestrosProyectos {
+    padding: 10px;
+}
+
+
+
+/*--------------------DIV's----------------------*/
+
+
+
+.acercaNuesrtoContenedorA,
+.acercaNuesrtoContenedorB,
+.descripcionServicios,
+.listadoProyectos {
+    width: 500px;
+    height: auto;
+    margin: 20px auto;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+}
+
+.descripcionServicios,
+.listadoProyectos {
+    width: 400px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.listadoProyectos {
+    height: 300px;
+    border-radius: 30px;
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.acercaNuesrtoContenedorB{
+    text-align: right;
+}
+
+.nuestrosServiciosContenedor hr,
+.algunosProyectosTitle hr {
+    width: 70%;
+    display: inline-block;
+}
+
+.algunosProyectos,
+.nuestrosServiciosContenedor {
+    margin: 20px auto;
+    display: inline-block;
+}
+
+.nuestrosServiciosContenedor {
+    width: 400px;;
+}
+
+.acercaNuesrtoContenedorB img{
+    width: 400px;
+    height: 400px;
+}
+
+.nuestrosServiciosContenedor img {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.algunosProyectos img {
+    width: 400px;
+    height: 600px;
+}
+
+.descripcionServicios img,
+.listadoProyectos img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/*------------------FOOTER----------------------*/
+
+
+
+footer {
+    background-image: url(Imagenes/Fondov2.jpg);
+    background-size: cover;
+    padding: 15px;
+}
+
+.footerLogo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footerLogo img {
+    width: 150px;
+}
+
+.footerInfo {
+    margin-top: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footerInfo img{
+    width: 30px;
+}
+
+.footerInfoContenedorA,
+.footerInfoContenedorB,
+.footerInfoContenedorC {
+    width: 30%;
+    margin: 20px;
+    color: whitesmoke;
+}
+
+.footerInfoContenedorA {
+    text-align: left;
+}
+
+.footerInfoContenedorC {
+    text-align: right;
+}
+
+.nuestrosServiciosContenedorB ul {
+    padding: 0;
+}
+
+.footerInfoContenedorA li,
+.footerInfoContenedorB li,
+.footerInfoContenedorC li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.footerInfoContenedorB li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+
+/*---------------------------FUENTES-Y-TEXTOS--------------------------------*/
+
+
+
+.h1Header,
+.h3Header {
+    font-size: 60pt;
+    color: whitesmoke;
+    font-family: caligsa;
+}
+
+.h3Header{
+    font-size: 20pt;
+}
+
+.acercaNuesrtoContenedorA h3{
+    font-size: 20pt;
+    color: black;
+}
+
+.acercaNuesrtoContenedorA p,
+#nuestrosServicios h2 {
+    font-size: 30pt;
+    font-family: caligsa;
+    color: black;
+    margin-top: 30px;
+}
+
+#sobreNosotros h2,
+.contactanos h2,
+#sobreNosotros p {
+    margin-top: 0;
+    padding: 1%;
+}
+
+#sobreNosotros h2,
+#contactanos h2,
+#sobreNosotros h3,
+#nuestrosProyectos h2,
+.contenidoNuestrosServicios h3,
+.algunosProyectosTitle h2 {
+    font-family: caligsa;
+    padding: 20px;
+}
+
+.contenidoNuestrosServicios h3,
+.contenidoNuestrosServicios p,
+.contenidoNuestrosServicios a {
+    margin: 10px;
+    padding: 10px;
+}
+
+#sobreNosotros p,
+.contenidoNuestrosServicios p,
+.descripcionServicios p {
+    text-align: left;
+}
+
+#infoServicios h4,
+#infoServicios h5,
+.descripcionServicios h6 {
+    font-family: caligsa;
+    font-size: 25pt;
+    color: black;
+    padding-top: 20px;
+}
+
+#infoServicios h5 {
+    font-size: 15pt;
+    padding: 10px;
+}
+
+.descripcionServicios h6 {
+    font-family: Montserrat;
+    font-size: 10pt;
+    padding: 10px;
+}
+
+
+
+/*-----------------------CONTACTO--------------------------------*/
+
+
+
+.contenidoContacto {
+    display: inline-flexbox;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.contenedorContacto {
+    display: inline-block;
+    text-align: left;
+}
+
+.contenedorContacto img{
+    height: 30px;
+}
+
+.contenedorContacto ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+.contenedorContacto li{
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    color: black;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    color: rgb(21, 21, 21);
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: grey;
+    color: whitesmoke;
+}
+
+textarea {
+    height: 100px; 
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+    }
