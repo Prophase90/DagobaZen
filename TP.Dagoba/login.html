@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dagoba . zen - Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <section id="menuNavegacion">
+            <nav>
+                <div class="menu">
+                    <a href="index.html">
+                        <img src="Imagenes/Logo_DGB.png" alt="Dagoba logo">
+                    </a>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tienda.html">Tienda</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#login" class="activo">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <section id="principal">
+            <div>
+                <h1 class="h1Header">DAGOBA</h1>
+                <h1 class="h1Header">. ZEN</h1>
+                <h3 class="h3Header">Encuentra la serenidad en tu propio mundo: Transformamos tus espacios con armonía, donde la naturaleza cobra vida, convirtiendolo en un punto zen.</h3>
+                <div class="botonPrincipal">
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="cctWhiteHeader">Iniciar sesión</button>
+                    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="cctWhiteHeaderRegistro">Registrarse</button>
+                </div>
+            </div>
+        </section>
+    </header>
+    <section id="login">
+        <div id="id01" class="modal">
+            <form class="modal-content animate" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="Imagenes/cute-leaf-cartoon-illustration.jpg" alt="Avatar" class="avatar">
+                </div>
+                <div class="container">
+                    <label for="uname"><b>Nombre de usuario</b></label>
+                    <input type="text" placeholder="Ingrese su correo o nombre de usuario" name="uname" required>
+                    <label for="psw"><b>Contraseña</b></label>
+                    <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
+                    <button type="submit" class="signinbtn">Ingresar</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Recordarme
+                    </label>
+                </div>
+                <div class="container">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+                    <span class="psw">Olvidaste tu <a href="#">contraseña?</a></span>
+                </div>
+            </form>
+        </div>
+        <div id="id02" class="modal">
+                <form class="modal-content animate" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="Imagenes/cute-leaf-cartoon-illustration (1).jpg" alt="Avatar" class="avatar">
+                </div>
+                <div>
+                    <h1>Registrarse</h1>
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Ingrese su correo. Ejemplo: dagoba.zen@gmail.com" name="email" required>
+                    <label for="psw"><b>Contraseña</b></label>
+                    <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
+                    <label for="psw-repeat"><b>Repita su contraseña</b></label>
+                    <input type="password" placeholder="Repita su contraseña" name="psw-repeat" required>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordarme
+                    </label>
+                    <p>Al crear una cuenta usted acepta nuestros <a href="#" style="color:dodgerblue">Terminos & condiciones</a>.</p>
+                </div>
+                    <div class="clearfix">
+                        <button type="submit" class="signupbtn">Registrarse</button>
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="login.js"></script>
+</body>
