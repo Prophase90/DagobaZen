@@ -14,8 +14,14 @@
         <section id="menuNavegacion">
             <nav>
                 <div class="menu">
-                    <a href="index.html">
+                    <a href="index.html" class="logo-default">
                         <img src="Imagenes/Logo_DGB.png" alt="Dagoba logo">
+                    </a>
+                    <a href="index.html" class="logo-black">
+                        <img src="Imagenes/Logo_DGB_Black.png" alt="Dagoba logo">
+                    </a>
+                    <a href="#" class="icon" onclick="toggleMenu()">
+                        <img src="Imagenes/menu.png" alt="Menú">
                     </a>
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -44,7 +50,7 @@
         <div class="contenidoContacto">
             <div class="contenedorContacto">
                 <ul>
-                    <li><h3>Nuestros canales de contacto</h3></li>
+                    <h3>Nuestros canales de contacto</h3>
                     <li>
                         <img src="Imagenes/correo-electronico.png" alt="Icono jardines verticales">
                         <div class="textosContacto">
@@ -96,11 +102,29 @@
             </div>
             <div class="footerInfo">
                 <div class="footerInfoContenedorA">
-                    <h3>CONTACTO</h3>
                     <ul>
-                        <li><img src="Imagenes/navegador-white.png" alt="">Calle falsa 123, Ing. Maschwitz, Escobar, Buenos Aires</li>
-                        <li><img src="Imagenes/whatsapp-white.png" alt="">+54 9 11 1234 5678</li>
-                        <li><img src="Imagenes/correo-electronico-white.png" alt="">contacto@dagobazen.com</li>
+                        <h3>CONTACTO</h3>
+                        <li>
+                            <img src="Imagenes/correo-electronico-white.png" alt="Email">
+                            <div class="textosContacto">
+                                <h4>CORREO ELECTRÓNICO</h4>
+                                <p>dagobazen@dagobazen.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="Imagenes/whatsapp-white.png" alt="Whatsapp">
+                            <div class="textosContacto">
+                                <h4>WHATSAPP</h4>
+                                <p>11 1234 5678</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="Imagenes/navegador-white.png" alt="Ubicacion">
+                            <div class="textosContacto">
+                                <h4>NUESTRO VIVERO</h4>
+                                <p>Calle falsa 123, Ingeniero Maschwitz, Buenos Aires</p>
+                            </div>
+                        </li>
                     </ul>
                     </div>
                 <div class="footerInfoContenedorB">
@@ -121,4 +145,5 @@
             </div>
         </section>
     </footer>
+    <script src="login.js"></script>
 </body>

@@ -14,19 +14,23 @@
 header{
     background-image: url(Imagenes/Fondov2.jpg);
     background-size: cover;
-    height: 1080px;
+    height: 100vh;
 }
 
 
 
 /*------------------MENU---------Y---------BOTONES-----------*/
 
+.menu .icon {
+    display: none;
+    float: right;
+    color: #fff;
+    padding: 15px 20px;
+    cursor: pointer;
+}
 
-
-nav a.activo {
-    padding: 10px;
-    border-style: solid;
-    border-radius: 10px;
+.menu .logo-black {
+    display: none;
 }
 
 nav a,
@@ -35,12 +39,22 @@ nav a,
     color: rgb(196, 196, 196);
     font-size: 20px;
     padding: 10px;
+    border-bottom: solid transparent;
+    transition: border-color 0.5s;
+}
+
+nav a.activo {
+    padding: 10px;
+    border-style: solid;
+    border-bottom: solid;
+    border-radius: 10px;
 }
 
 nav a:not(:has(img)):hover,
 .footerInfoContenedorB a:hover {
     padding: 10px;
     border-bottom: solid;
+    transition: border-color 0.5s;
 }
 
 .cctWhiteHeader,
@@ -54,13 +68,15 @@ nav a:not(:has(img)):hover,
     border-radius: 10px;
     display: inline-block;
     margin-top: 30px;
+    transition: border-color, background-color 0.5s;
 }
 
 .cctWhiteHeader:hover,
 .cctWhiteHeaderRegistro:hover {
     color: black;
     border-color: whitesmoke;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    transition: border-color, background-color 0.5s;
 }
 
 .cctBlack {
@@ -70,6 +86,7 @@ nav a:not(:has(img)):hover,
 .cctBlack:hover {
     color: whitesmoke;
     background-color: black;
+    transition: border-color, background-color 0.5s;
 }
 
 .cctWhite20 {
@@ -79,14 +96,15 @@ nav a:not(:has(img)):hover,
     border-style: solid;
     border-radius: 10px;
     display: inline;
-    padding: 5px 10px;
     width: auto;
+    transition: border-color, background-color 0.5s;
 }
 
 .cctWhite20:hover {
     color: whitesmoke;
     border-color: lightgray;
     background-color: lightgray;
+    transition: border-color, background-color 0.5s;
 }
 
 .menu{
@@ -102,6 +120,7 @@ nav a:not(:has(img)):hover,
 .menu ul{
     list-style: none;
     display: inline-block;
+    transition: max-height 0.5s ease-out;
 }
 
 .menu li{
@@ -163,7 +182,7 @@ nav a:not(:has(img)):hover,
 .listadoProyectos {
     width: 500px;
     height: auto;
-    margin: 20px auto;
+    margin: 30px auto;
     vertical-align: top;
     display: inline-block;
     text-align: left;
@@ -197,7 +216,7 @@ nav a:not(:has(img)):hover,
 
 .algunosProyectos,
 .nuestrosServiciosContenedor {
-    margin: 20px auto;
+    margin: 30px auto;
     display: inline-block;
 }
 
@@ -233,11 +252,14 @@ nav a:not(:has(img)):hover,
 /*------------------FOOTER----------------------*/
 
 
-
 footer {
     background-image: url(Imagenes/Fondov2.jpg);
     background-size: cover;
     padding: 15px;
+}
+
+#footerCompleto {
+    text-align: center;
 }
 
 .footerLogo {
@@ -250,49 +272,66 @@ footer {
 }
 
 .footerInfo {
-    margin-top: 0;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .footerInfo img{
     width: 30px;
 }
 
+.footerInfoContenedorA img {
+    margin-right: 10px;
+}
+
 .footerInfoContenedorA,
 .footerInfoContenedorB,
 .footerInfoContenedorC {
-    width: 30%;
+    flex: 1;
+}
+
+.footerInfoContenedorA ul,
+.footerInfoContenedorB ul,
+.footerInfoContenedorC ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footerInfoContenedorA,
+.footerInfoContenedorB,
+.footerInfoContenedorC {
     margin: 20px;
     color: whitesmoke;
-}
-
-.footerInfoContenedorA {
-    text-align: left;
-}
-
-.footerInfoContenedorC {
-    text-align: right;
-}
-
-.nuestrosServiciosContenedorB ul {
-    padding: 0;
 }
 
 .footerInfoContenedorA li,
 .footerInfoContenedorB li,
 .footerInfoContenedorC li {
-    list-style: none;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.footerInfoContenedorA li,
+.footerInfoContenedorA ul h3 {
+    text-align: left;
+    justify-content: left;
+}
+
+.footerInfoContenedorC li {
+    text-align: right;
+    justify-content: right;
 }
 
 .footerInfoContenedorB li {
-    display: inline-block;
-    margin-right: 10px;
+    padding: 5px;
 }
-
-
 
 /*---------------------------FUENTES-Y-TEXTOS--------------------------------*/
 
@@ -303,10 +342,12 @@ footer {
     font-size: 60pt;
     color: whitesmoke;
     font-family: caligsa;
+    padding: 10px;
 }
 
 .h3Header{
     font-size: 20pt;
+    padding: 15px;
 }
 
 .acercaNuesrtoContenedorA h3{
@@ -377,41 +418,38 @@ footer {
 
 /*-----------------------CONTACTO--------------------------------*/
 
-
-
-.contenidoContacto {
-    display: inline-flexbox;
-    height: 100%;
-    justify-content: space-around;
-}
-
 .contenedorContacto {
-    display: inline-block;
+    display: inline-flex;
+    vertical-align: middle;
     text-align: left;
+    padding: 20px;
 }
 
 .contenedorContacto img{
     height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
-.contenedorContacto ul{
+.contenedorContacto ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    color: black;
 }
 
-.contenedorContacto li{
-    list-style: none;
-    padding: 20px;
-    margin: 0;
-    color: black;
+.contenedorContacto li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.textosContacto {
+    flex: 1;
 }
 
 form {
     max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
 }
 input[type="text"],
 input[type="tel"],
@@ -436,15 +474,14 @@ input[type="submit"]:hover {
 
 textarea {
     height: 100px; 
-    width: 400px;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
     resize: none;
     }
 
-    /************** PRUEBA LOGIN FORM ***************/
+    /************** LOGIN FORM ***************/
 
-    /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -454,9 +491,6 @@ input[type=text], input[type=password] {
   border-radius: 10px;
   box-sizing: border-box;
 }
-
-
-/* Set a style for all buttons */
 
 .cctWhiteHeaderRegistro{
     border-style: none;
@@ -490,22 +524,18 @@ button {
   opacity: 0.7;
 }
 
-/* Extra styles for the singup button */
 .signupbtn,
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
 }
 
-/* Extra styles for the cancel button */
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
 }
 
-
-/* Center the image and position the close button */
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
@@ -526,29 +556,27 @@ span.psw {
   padding-top: 16px;
 }
 
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
   padding-top: 30px;
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: whitesmoke;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto;
   border-radius: 10px;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
 }
 
-/* The Close Button (x) */
 .close {
   position: absolute;
   right: 25px;
@@ -568,7 +596,6 @@ span.psw {
     display: inline-block;
 }
 
-/* Add Zoom Animation */
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
@@ -584,7 +611,6 @@ span.psw {
   to {transform: scale(1)}
 }
 
-/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
        display: block;
@@ -645,3 +671,127 @@ span.psw {
     margin-top: 5px;
 }
 
+/***************************************RESPONSIVE*******************************************/
+
+@media screen and (max-width: 630px) {
+
+    #menuNavegacion {
+        position: fixed;
+        width: 100%;
+    }
+
+    .menu{
+        background-color: whitesmoke;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    nav a {
+        font-size: 90%;
+        color: black;
+    }
+
+    .footerInfoContenedorB a {
+        font-size: 80%;
+        color: whitesmoke;
+    }
+
+    .menu ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: whitesmoke;
+        width: 100%;
+        text-align: center;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .menu .logo-default {
+        display: none;
+    }
+    
+    .menu .logo-black {
+        display: block;
+    }
+
+    .menu li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu.active ul {
+        max-height: 500px;
+    }
+
+    .menu .icon {
+        display: block;
+        float: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .menu .icon img {
+        width: 30px; /* Ajusta el tamaño del ícono según sea necesario */
+    }
+    
+    .menu.active ul {
+        display: block; /* Mostrar la lista de enlaces cuando se hace clic */
+    }
+
+    .menu li{
+        margin: 10px;
+        padding: 8px;
+    }
+    
+    #principal {
+        padding: 8rem 0rem 0rem 6rem;
+    }
+    
+    #principal > div{
+        max-width: 500px;
+    }
+    
+    .h1Header {
+        font-size: 45pt;
+    }
+    
+    .h3Header {
+        font-size: 18pt;
+    }
+
+    .acercaNuesrtoContenedorA,
+    .acercaNuesrtoContenedorB {
+        text-align: center;
+    }
+
+    .acercaNuesrtoContenedorA p,
+    #nuestrosServicios h2 {
+    font-size: 25pt;
+    }
+
+    .acercaNuesrtoContenedorA,
+    .acercaNuesrtoContenedorB,
+    .descripcionServicios,
+    .listadoProyectos {
+    width: auto;
+    }
+
+    .contenidoNuestrosServicios p {
+        text-align: center;
+    }
+
+    .descripcionServicios p,
+    #sobreNosotros p {
+        text-align: center;
+    }
+
+    .footerInfoContenedorA ul {
+        font-size: 90%;
+    }
+    .footerInfo img{
+        width: 25px;
+    }
+
+}
