@@ -245,6 +245,8 @@ nav a:not(:has(img)):hover,
 .listadoProyectos img {
     width: 100%;
     height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 
@@ -265,7 +267,6 @@ footer {
 .footerLogo {
     text-align: center;
     margin-bottom: 20px;
-    position: relative;
 }
 
 .footerLogo img {
@@ -405,6 +406,16 @@ footer {
     text-align: left;
 }
 
+#sobreNosotros h3 {
+    font-size: 22px;
+}
+
+#sobreNosotros p {
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 #infoServicios h4,
 #infoServicios h5,
 .descripcionServicios h6 {
@@ -531,7 +542,7 @@ button {
 
 .signupbtn button :hover,
 .signinbtn button :hover,
-.cancelbtn button :hover{
+.cancelbtn button :hover {
   opacity: 0.7;
 }
 
@@ -556,6 +567,7 @@ button {
 img.avatar {
   width: 80%;
   border-radius: 50%;
+  margin: 10px;
 }
 
 .container {
@@ -580,7 +592,6 @@ span.psw {
   padding-top: 30px;
 }
 
-/* Modal Content/Box */
 .modal-content {
   background-color: whitesmoke;
   margin: 5% auto 15% auto;
@@ -604,7 +615,8 @@ span.psw {
 }
 
 .clearfix {
-    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .animate {
@@ -684,7 +696,19 @@ span.psw {
 
 /***************************************RESPONSIVE*******************************************/
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 1300px) {
+
+    .menu li{
+        margin: 5px;
+        padding: 7px;
+    }
+
+}
+
+
+/***************************** 1025 **********************************/
+
+@media screen and (max-width: 1025px) {
 
     #menuNavegacion {
         position: fixed;
@@ -695,10 +719,12 @@ span.psw {
         background-color: whitesmoke;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        border: rgba(211, 211, 211, 0.5) solid;
+        border-top: none;
     }
     
     nav a {
-        font-size: 90%;
+        font-size: 95%;
         color: black;
     }
 
@@ -712,6 +738,8 @@ span.psw {
         text-align: center;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        border: rgba(211, 211, 211, 0.5) solid;
+        border-top: none;
     }
 
     .menu .logo-default {
@@ -739,7 +767,160 @@ span.psw {
     }
     
     .menu .icon img {
-        width: 30px; /* Ajusta el tamaño del ícono según sea necesario */
+        width: 35px;
+    }
+    
+    .menu.active ul {
+        display: block;
+    }
+
+    .menu li{
+        margin: 10px;
+        padding: 8px;
+    }
+    
+    #principal {
+        padding: 8rem 0rem 0rem 5rem;
+    }
+    
+    #principal > div{
+        max-width: 500px;
+    }
+    
+    .h1Header {
+        font-size: 45pt;
+    }
+    
+    .h3Header {
+        font-size: 18pt;
+    }
+
+    .acercaNuesrtoContenedorA,
+    .acercaNuesrtoContenedorB {
+        text-align: center;
+    }
+
+    .acercaNuesrtoContenedorA p,
+    #nuestrosServicios h2 {
+    font-size: 25pt;
+    }
+
+    .acercaNuesrtoContenedorA,
+    .acercaNuesrtoContenedorB,
+    .descripcionServicios,
+    .listadoProyectos {
+    width: auto;
+    }
+
+    .contenidoNuestrosServicios p {
+        text-align: center;
+    }
+
+    .descripcionServicios p,
+    #sobreNosotros p {
+        text-align: center;
+    }
+
+    .footerInfo {
+        flex-direction: column;
+    }
+
+    .footerInfoContenedorA ul,
+    .footerInfoContenedorC ul {
+        font-size: 90%;
+    }
+
+    .footerInfoContenedorA li {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .footerInfoContenedorC li {
+        display: inline-block;
+    }
+
+    .footerInfo img{
+        width: 25px;
+    }
+
+    .footerInfoContenedorA,
+        .footerInfoContenedorC {
+        margin: 5px;
+    }
+
+    .footerInfoContenedorB {
+        display: none;
+    }
+
+    .footerInfoContenedorC hr {
+        display: flex;
+        margin: 10px;
+    }
+
+}
+
+/***************************** 630 **********************************/
+
+@media screen and (max-width: 630px) {
+
+    #menuNavegacion {
+        position: fixed;
+        width: 100%;
+    }
+
+    .menu{
+        background-color: whitesmoke;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: rgba(211, 211, 211, 0.5) solid;
+        border-top: none;
+    }
+    
+    nav a {
+        font-size: 90%;
+        color: black;
+    }
+
+    .menu ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: whitesmoke;
+        width: 100%;
+        text-align: center;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: rgba(211, 211, 211, 0.5) solid;
+        border-top: none;
+    }
+
+    .menu .logo-default {
+        display: none;
+    }
+    
+    .menu .logo-black {
+        display: block;
+    }
+
+    .menu li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu.active ul {
+        max-height: 500px;
+    }
+
+    .menu .icon {
+        display: block;
+        float: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .menu .icon img {
+        width: 35px; /* Ajusta el tamaño del ícono según sea necesario */
     }
     
     .menu.active ul {
