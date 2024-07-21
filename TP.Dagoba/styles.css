@@ -265,10 +265,18 @@ footer {
 .footerLogo {
     text-align: center;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .footerLogo img {
     width: 150px;
+}
+
+.hrLogoFooter {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .footerInfo {
@@ -318,8 +326,7 @@ footer {
     align-items: center;
 }
 
-.footerInfoContenedorA li,
-.footerInfoContenedorA ul h3 {
+.footerInfoContenedorA li {
     text-align: left;
     justify-content: left;
 }
@@ -331,6 +338,10 @@ footer {
 
 .footerInfoContenedorB li {
     padding: 5px;
+}
+
+.footerInfoContenedorC hr {
+    display: none;
 }
 
 /*---------------------------FUENTES-Y-TEXTOS--------------------------------*/
@@ -691,11 +702,6 @@ span.psw {
         color: black;
     }
 
-    .footerInfoContenedorB a {
-        font-size: 80%;
-        color: whitesmoke;
-    }
-
     .menu ul {
         display: none;
         position: absolute;
@@ -746,7 +752,7 @@ span.psw {
     }
     
     #principal {
-        padding: 8rem 0rem 0rem 6rem;
+        padding: 8rem 0rem 0rem 4rem;
     }
     
     #principal > div{
@@ -754,11 +760,11 @@ span.psw {
     }
     
     .h1Header {
-        font-size: 45pt;
+        font-size: 40pt;
     }
     
     .h3Header {
-        font-size: 18pt;
+        font-size: 15pt;
     }
 
     .acercaNuesrtoContenedorA,
@@ -787,11 +793,40 @@ span.psw {
         text-align: center;
     }
 
-    .footerInfoContenedorA ul {
-        font-size: 90%;
+    .footerInfo {
+        flex-direction: column;
     }
+
+    .footerInfoContenedorA ul,
+    .footerInfoContenedorC ul {
+        font-size: 80%;
+    }
+
+    .footerInfoContenedorA li {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .footerInfoContenedorC li {
+        display: inline-block;
+    }
+
     .footerInfo img{
         width: 25px;
+    }
+
+    .footerInfoContenedorA,
+        .footerInfoContenedorC {
+        margin: 2px;
+    }
+
+    .footerInfoContenedorB {
+        display: none;
+    }
+
+    .footerInfoContenedorC hr {
+        display: flex;
+        margin: 10px;
     }
 
 }
