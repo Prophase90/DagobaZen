@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
     <header>
@@ -30,7 +29,7 @@
                         <li><a href="nosotros.html">Nosotros</a></li>
                         <li><a href="tienda.html">Tienda</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="#login" class="activo">Iniciar sesión</a></li>
+                        <li><a href="#login" id="loginLink" class="activo">Iniciar sesión</a></li>
                     </ul>
                 </div>
             </nav>
@@ -39,24 +38,25 @@
             <div>
                 <h1 class="h1Header">DAGOBA</h1>
                 <h1 class="h1Header">. ZEN</h1>
-                <h3 class="h3Header">Encuentra la serenidad en tu propio mundo: Transformamos tus espacios con armonía, donde la naturaleza cobra vida, convirtiendolo en un punto zen.</h3>
+                <h3 class="h3Header">Encuentra la serenidad en tu propio mundo: Transformamos tus espacios con armonía, donde los espacios cobran vida, convirtiendolo en un punto zen.</h3>
                 <div class="botonPrincipal">
-                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="cctWhiteHeader">Iniciar sesión</button>
-                    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="cctWhiteHeaderRegistro">Registrarse</button>
+                    <button id="loginBtn" onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'" style="width:auto;" class="cctWhiteHeader">Iniciar sesión</button>
+                    <button id="signupBtn" onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none'" style="width:auto;" class="cctWhiteHeaderRegistro">Registrarse</button>
+                    <button id="logoutBtn" onclick="logout()" style="display: none; width:auto;" class="cctWhiteHeaderRegistro">Cerrar sesión</button>
                 </div>
             </div>
         </section>
     </header>
     <section id="login">
         <div id="id01" class="modal">
-            <form class="modal-content animate" method="post">
+            <form class="modal-content animate" onsubmit="login(event)">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                     <img src="Imagenes/cute-leaf-cartoon-illustration.jpg" alt="Avatar" class="avatar">
                 </div>
                 <div class="container">
                     <label for="uname"><b>Nombre de usuario</b></label>
-                    <input type="text" placeholder="Ingrese su correo o nombre de usuario" name="uname" required>
+                    <input type="email" id="uname" placeholder="Ingrese su correo" name="uname" required>
                     <label for="psw"><b>Contraseña</b></label>
                     <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
                     <button type="submit" class="signinbtn">Ingresar</button>
@@ -71,7 +71,7 @@
             </form>
         </div>
         <div id="id02" class="modal">
-                <form class="modal-content animate" method="post">
+            <form class="modal-content animate" onsubmit="signup(event)">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                     <img src="Imagenes/cute-leaf-cartoon-illustration (1).jpg" alt="Avatar" class="avatar">
@@ -79,7 +79,7 @@
                 <div class="container">
                     <h1>Registrarse</h1>
                     <label for="email"><b>Email</b></label>
-                    <input type="email" placeholder="Ingrese su correo. Ejemplo: dagoba.zen@gmail.com" name="email" required>
+                    <input type="email" id="newuname" placeholder="Ingrese su correo. Ejemplo: dagoba.zen@gmail.com" name="email" required>
                     <label for="psw"><b>Contraseña</b></label>
                     <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
                     <label for="psw-repeat"><b>Repita su contraseña</b></label>
@@ -89,13 +89,13 @@
                     </label>
                     <p>Al crear una cuenta usted acepta nuestros <a href="#" style="color:dodgerblue">Terminos & condiciones</a>.</p>
                 </div>
-                    <div class="clearfix">
-                        <button type="submit" class="signupbtn">Registrarse</button>
-                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
-                    </div>
+                <div class="clearfix">
+                    <button type="submit" class="signupbtn">Registrarse</button>
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
                 </div>
             </form>
         </div>
     </section>
     <script src="script.js"></script>
 </body>
+</html>
