@@ -529,7 +529,8 @@ form,
 .contenidoPagoConfirmado,
 .contenidoUbicacion,
 .contenidoContactoConfirmado,
-.contenidoErrorUsuario {
+.contenidoErrorUsuario,
+.contenidoAddPlant {
     max-width: 400px;
 }
 
@@ -572,6 +573,10 @@ input[type="tel"] {
     border: 1px solid lightgrey;
     border-radius: 10px;
     box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    margin-bottom: 15px;
 }
 
 .cctWhiteHeaderRegistro {
@@ -639,7 +644,8 @@ input[type="tel"] {
 .imgPagoConfirmado,
 .iframeUbicacion,
 .imgContactoConfirmado,
-.imgErrorUsuario {
+.imgErrorUsuario,
+.imgAddPlant {
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
@@ -671,7 +677,8 @@ img.avatarCheckout {
 .containerPagoConfirmado,
 .containerUbicacion,
 .containerContactoConfirmado,
-.containerErrorUsuario {
+.containerErrorUsuario,
+.containerAddPlant {
     padding: 16px;
 }
 
@@ -691,7 +698,8 @@ span.psw {
 .pagoConfirmado,
 .nuestraUbicacion,
 .contactoEnviado,
-.userError {
+.userError,
+.AddPlantKart {
     display: none;
     position: fixed;
     z-index: 4;
@@ -706,7 +714,8 @@ span.psw {
 
 .modalCheckOut,
 .userError,
-.errorTienda {
+.errorTienda,
+.AddPlantKart {
     z-index: 6;
 }
 
@@ -720,7 +729,8 @@ span.psw {
 .contenidoPagoConfirmado,
 .contenidoUbicacion,
 .contenidoContactoConfirmado,
-.contenidoErrorUsuario {
+.contenidoErrorUsuario,
+.contenidoAddPlant {
     background-color: whitesmoke;
     margin: 5% auto 15% auto;
     border-radius: 10px;
@@ -821,7 +831,8 @@ span.psw {
 .nuestraUbicacion button,
 .contactoEnviado button,
 .formularioContacto button,
-.userError button {
+.userError button,
+.AddPlantKart button {
     border: none;
     border-radius: 10px;
     outline: 0;
@@ -841,7 +852,8 @@ span.psw {
 .nuestraUbicacion button:hover,
 .contactoEnviado button:hover,
 .formularioContacto button:hover,
-.userError button:hover {
+.userError button:hover,
+.AddPlantKart button:hover {
     opacity: 0.7;
     transition: 0.5s;
 }
@@ -858,7 +870,9 @@ span.psw {
 .contactoEnviado button,
 .formularioContacto button,
 .userError p,
-.userError button {
+.userError button,
+.AddPlantKart p,
+.AddPlantKart button {
     margin-top: 5px;
 }
 
@@ -868,10 +882,10 @@ span.psw {
     display: none;
     position: fixed;
     z-index: 5;
-    top: 14%;
+    top: 16%;
     right: 0;
     background-color: whitesmoke;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 10px;
     max-height: 80vh;
     overflow-y: auto;
     transition: 0.5s;

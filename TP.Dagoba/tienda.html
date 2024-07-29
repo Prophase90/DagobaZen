@@ -135,13 +135,26 @@
     <div id="id03" class="errorTienda animate">
       <div class="contenidoErrorTienda">
         <div class="imgErrorTienda">
-          <span onclick=hideErrorTienda() class="close" title="Cerrar">&times;</span>
+          <span onclick="hideErrorTienda()" class="close" title="Cerrar">&times;</span>
           <img src="Imagenes/ups_avatar.jpg" alt="Avatar" class="avatar">
         </div>
         <div class="containerErrorTienda">
           <h1>¡Ups!</h1>
           <p>Debes ingresar o registrarte para poder continuar con tu compra</p>
           <button onclick="redirectToLogin()">Ingresar</button>
+        </div>
+      </div>
+    </div>
+    <div id="addPlant" class="AddPlantKart animate">
+      <div class="contenidoAddPlant">
+        <div class="imgAddPlant">
+          <span onclick="hideAddPlant()" class="close" title="Cerrar">&times;</span>
+          <img src="Imagenes/planta_agregada_avatar.jpg" alt="Avatar" class="avatar">
+        </div>
+        <div class="containerAddPlant">
+          <h1>¡Agregada!</h1>
+          <p>La planta ya se encuentre en tu carrito</p>
+          <button onclick="hideAddPlant()">Continuar comprando</button>
         </div>
       </div>
     </div>

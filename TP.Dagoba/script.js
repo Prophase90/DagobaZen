@@ -13,7 +13,8 @@ var logoutButton = document.getElementById('logoutBtn');
 var userButton = document.getElementById('userBtn');
 var loginLink = document.getElementById('loginLink');
 var tiendaLink = document.querySelector('ul li:nth-child(4) a');
-var orderBtns = document.querySelectorAll('.productoTienda button[id="orderBtn"]'); // Cambio: Ahora es querySelectorAll
+var orderBtns = document.querySelectorAll('.productoTienda button[id="orderBtn"]');
+var addPlantToKart = document.getElementById('addPlant');
 
 
 //Modales display
@@ -56,6 +57,11 @@ function hideubiGoogle() {
 // Define la función para ocultar el modal de errorTienda
 function hideErrorTienda() {
     document.getElementById('id03').style.display = 'none';
+}
+
+// Define la función para ocultar el modal de addplant
+function hideAddPlant() {
+    document.getElementById('addPlant').style.display = 'none';
 }
 
 // Define la función para ocultar el modal de formulario contacto enviado
@@ -323,6 +329,7 @@ orderBtns.forEach(function (boton) {
 
             agregarAlCarrito(producto); // Agregar producto al carrito
             /*document.querySelector('.contenidoCarrito').style.display = 'block';*/
+            document.querySelector('.AddPlantKart').style.display = 'block';
 
         } else {
             errorTienda.style.display = 'block'; // Mostrar modal de error de tienda
@@ -441,6 +448,9 @@ window.onclick = function (event) {
     }
     if (event.target == userError) {
         userError.style.display = 'none';
+    }
+    if (event.target == addPlantToKart) {
+        addPlantToKart.style.display ='none';
     }
 }
 
