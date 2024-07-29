@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dagoba . zen - Servicios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <section id="menuNavegacion">
@@ -20,6 +23,10 @@
                     <a href="index.html" class="logo-black">
                         <img src="Imagenes/Logo_DGB_Black.png" alt="Dagoba logo">
                     </a>
+                    <a href="carrito.html" class="kart-black" id="kart-black"><img src="Imagenes/bolso.png"
+                            alt="compra">
+                        <span class="cantidadCarrito">0</span>
+                    </a>
                     <a href="#" class="icon" onclick="toggleMenu()">
                         <img src="Imagenes/menu.png" alt="Menú">
                     </a>
@@ -29,6 +36,12 @@
                         <li><a href="nosotros.html">Nosotros</a></li>
                         <li><a href="tienda.html">Tienda</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
+                        <li>
+                            <a href="carrito.html" class="kart-default" id="kart-default">
+                                <img src="Imagenes/bolso_white.png" alt="compra">
+                                <span class="cantidadCarrito">0</span>
+                            </a>
+                        </li>
                         <li><a href="login.html" id="loginLink">Iniciar sesión</a></li>
                     </ul>
                 </div>
@@ -38,7 +51,8 @@
             <div>
                 <h1 class="h1Header">DAGOBA</h1>
                 <h1 class="h1Header">. ZEN</h1>
-                <h3 class="h3Header">Creamos y transformamos el punto de conexion entre lo natural y tu interior. Te ayudamos a encontar aquello que estás buscando.</h3>
+                <h3 class="h3Header">Creamos y transformamos el punto de conexion entre lo natural y tu interior. Te
+                    ayudamos a encontar aquello que estás buscando.</h3>
                 <div class="botonPrincipal">
                     <a href="#nuestrosServicios" class="cctWhiteHeader">Descubrí como</a>
                 </div>
@@ -46,13 +60,107 @@
         </section>
     </header>
     <section id="nuestrosServicios">
+        <div class="contenidoCarrito">
+            <h1>Carrito de compras</h1>
+            <ul class="productosCarrito"></ul>
+            <div class="pagoTienda" onclick="showModalid04()">
+                <p>Finalizar compra</p>
+            </div>
+            <div class="checkOut">
+                <div class="total">
+                    <p>0</p>
+                </div>
+                <div class="cerrarCarrito">
+                    <p>Cerrar</p>
+                </div>
+            </div>
+        </div>
+        <div id="id04" class="modalCheckOut">
+            <form class="modal-content-pago animate">
+                <div class="imgcheckOut">
+                    <span onclick=hideModalid04() class="close" title="Cerrar">&times;</span>
+                </div>
+                <div class="formularioPago">
+                    <div class="containerPago">
+                        <h1>Datos de pago</h1>
+                        <label for="nombreCompTarjeta"><b>Nombre en tarjeta:</b></label>
+                        <input type="text" id="nombreCompTarjeta" name="nombreCompTarjeta"
+                            placeholder="Daniel Ignacio Galeano" required>
+                        <label for="nroTarjeta"><b>Ingrese los 16 dígitos de su tarjeta</b></label>
+                        <input type="number" id="nroTarjeta" name="nroTarjeta" min="1111111111111111"
+                            max="9999999999999999" placeholder="Sin espacios o guiones" required>
+                        <label for="mesVence"><b>Mes de vencimiento</b></label>
+                        <input type="number" id="mesVence" min="01" max="12" placeholder="Ingrese el mes de vencimiento"
+                            name="mesVence" required>
+                        <label for="anioVence"><b>Año de vencimiento</b></label>
+                        <input type="number" id="anioVence" name="anioVence" min="2024" max="9999"
+                            placeholder="Ingrese el año de vencimiento" required>
+                        <label for="ccv"><b>Código de seguridad</b></label>
+                        <input type="number" id="ccv" name="ccv" min="111" max="999"
+                            placeholder="Ingrese el código de seguridad" required>
+                    </div>
+                    <div class="containerPago">
+                        <h1>Datos de entrega</h1>
+                        <label for="nombreCompleto"><b>Nombre completo:</b></label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto"
+                            placeholder="Daniel Ignacio Galeano" required>
+                        <label for="dirEntrega"><b>Dirección de entrega</b></label>
+                        <input type="text" id="dirEntrega" name="dirEntrega" placeholder="Calle Falsa 123" required>
+                        <label for="localidadEntrega"><b>Localidad de entrega</b></label>
+                        <input type="text" id="localidadEntrega" name="localidadEntrega"
+                            placeholder="Ingeniero Maschwitz" required>
+                        <label for="provinciaEntrega"><b>Provincia de entrega</b></label>
+                        <input type="text" id="provinciaEntrega" name="provinciaEntrega" placeholder="Buenos Aires"
+                            required>
+                        <label for="cPostal"><b>Código postal</b></label>
+                        <input type="number" id="cPostal" name="cPostal" min="1111" max="9999"
+                            placeholder="Ingrese su código postal" required>
+                        <label>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <button type="button" class="pagarBtn" onclick="pagoExitoso()">Confirmar pago</button>
+                    <button type="button" onclick=hideModalid04() class="cancelbtn">Cancelar pago</button>
+                </div>
+            </form>
+        </div>
+        <div id="id05" class="pagoConfirmado animate">
+            <div class="contenidoPagoConfirmado">
+                <div class="imgPagoConfirmado">
+                    <img src="Imagenes/check_3d-rendering-cartoon-cacti-with-friendly-face.jpg" alt="Avatar"
+                        class="avatar">
+                </div>
+                <div class="containerPagoConfirmado">
+                    <h1>¡Muchas gracias por tu compra!</h1>
+                    <p>Recibirás por correo la información de entrega de tu pedido</p>
+                    <button onclick="finDeCompra()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+        <div id="ubiGoogle" class="nuestraUbicacion animate">
+            <div class="contenidoUbicacion">
+                <div class="iframeUbicacion">
+                    <span onclick=hideubiGoogle() class="close" title="Cerrar">&times;</span>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26341.558733988026!2d-58.76370979815607!3d-34.38368085689874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca0120bcffc39%3A0x982b3260bdefe8cd!2sIngeniero%20Maschwitz%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1722136542735!5m2!1ses-419!2sar"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="containerUbicacion">
+                    <h1>Nuestra ubicación</h1>
+                    <p>Nos encontramos en Calle Falsa 123, Ingeniero Maschwitz</p>
+                    <button onclick=hideubiGoogle()>Cerrar</button>
+                </div>
+            </div>
+        </div>
         <h2>NUESTROS SERVICIOS</h2>
         <div class="nuestrosServiciosContenedor">
             <img src="Imagenes/planta.png" alt="Icono jardines verticales">
             <div class="contenidoNuestrosServicios">
                 <hr>
                 <h3>JARDINES VERTICALES</h3>
-                <p>Conectá con gran variedad de plantas en cualquier lugar y espacio. Nosotros nos encargamos de hacerlo posible, sea exterior o interior.</p>
+                <p>Conectá con gran variedad de plantas en cualquier lugar y espacio. Nosotros nos encargamos de hacerlo
+                    posible, sea exterior o interior.</p>
                 <a href="servicios.html#jardinesVerticales" class="cctWhite20">Ver más</a>
             </div>
         </div>
@@ -61,7 +169,8 @@
             <div class="contenidoNuestrosServicios">
                 <hr>
                 <h3>PAISAJISMO Y PARQUIZACION</h3>
-                <p>Te escuchamos para que juntos convertir ese espacio en tu punto de conexión con la naturaleza. No importa el tamaño de tus sueños, buscamos que se hagan realidad.</p>
+                <p>Te escuchamos para que juntos convertir ese espacio en tu punto de conexión con la naturaleza. No
+                    importa el tamaño de tus sueños, buscamos que se hagan realidad.</p>
                 <a href="servicios.html#paisajismoYParquizacion" class="cctWhite20">Ver más</a>
             </div>
         </div>
@@ -70,94 +179,146 @@
             <div class="contenidoNuestrosServicios">
                 <hr>
                 <h3>NUESTRO VIVERO</h3>
-                <p>Sabemos el amor y tiempo que le dedicás a las plantas. Por ello, te ofrecemos nuestras especies para que las cuides y crees o transformes tu propio espacio de conexión.</p>
+                <p>Sabemos el amor y tiempo que le dedicás a las plantas. Por ello, te ofrecemos nuestras especies para
+                    que las cuides y crees o transformes tu propio espacio de conexión.</p>
                 <a href="servicios.html#nuestroVivero" class="cctWhite20">Ver más</a>
             </div>
         </div>
     </section>
     <section id="infoServicios">
         <div id="jardinesVerticales">
-            <h4>JARDINES VERTICALES</h4>
-            <h5>¿Cómo lo hacemos?</h5>
+            <div class="titleServicios">
+                <hr>
+                <h4>JARDINES VERTICALES</h4>
+                <p>Descubre una nueva propuesta innovadora que te permite disfrutar de una amplia gama de texturas y
+                    colores, ideal para espacios tanto interiores como exteriores, incluso en áreas reducidas. En Dagoba
+                    Zen, empleamos diversos sistemas constructivos que se ajustan perfectamente a tus espacios y
+                    requisitos.</p>
+                <h5>¿Cómo lo hacemos?</h5>
+            </div>
             <div class="descripcionServicios">
                 <figure>
-                    <img src="Imagenes/visita.png" alt="visitaJardin">
-                        <figcaption>
-                            <h6>VISITA</h6>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum maxime consequuntur eum hic odio? Omnis, qui enim ducimus debitis illum quae libero ullam adipisci asperiores nesciunt odio quasi, atque aliquam?</p>
-                        </figcaption>
+                    <img src="Imagenes/visita_02.jpg" alt="visitaJardin">
+                    <figcaption>
+                        <h6>VISITA</h6>
+                        <p>Para crear jardines verticales, es importante considerar la arquitectura para verificar el
+                            soporte y peso de la estructura y plantas, y la orientación de estos espacios para evaluar
+                            la exposición al sol, al viento, acceso al agua, tipo de instalación y otros factores
+                            determinantes en la elección de las plantas según sus necesidades.</p>
+                        <p>Agendamos una visita inicial al lugar para diseñar tu espacio, abordando estos aspectos. A
+                            partir de esta visita, definimos objetivos y la transformación del espacio.</p>
+                    </figcaption>
                 </figure>
             </div>
             <div class="descripcionServicios">
                 <figure>
-                    <img src="Imagenes/diseño.png" alt="diseñoJardin">
+                    <img src="Imagenes/disenio_02.jpg" alt="diseñoJardin">
                     <figcaption>
                         <h6>DISEÑO</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim hic adipisci, quod delectus velit veritatis vitae saepe omnis pariatur dolores! Eligendi nisi rerum aliquid iure quae cupiditate rem, in dolore.</p>
+                        <p>Después de la visita inicial, desarrollamos el diseño y te proporcionamos renders. Si es
+                            necesario, realizamos modificaciones o presentamos alternativas. Una vez aprobado,
+                            procedemos con la entrega final del diseño.</p>
+                        <p>Dado que se trata de jardines verticales, ofrecemos diversas opciones de materiales, sistemas
+                            de riego, iluminación, así como tamaños y colores de plantas. En nuestro presupuesto se
+                            incluyen todos los materiales necesarios para completar la transformación.</p>
                     </figcaption>
                 </figure>
             </div>
             <div class="descripcionServicios">
                 <figure>
-                    <img src="Imagenes/manosobra.png" alt="transformacionJardin">
+                    <img src="Imagenes/trabajo_02.jpg" alt="transformacionJardin">
                     <figcaption>
                         <h6>TRANSFORMACION</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam tempora laborum porro exercitationem ipsam, corrupti, natus laudantium fuga animi nulla officia ratione nobis consequatur totam illum incidunt quaerat distinctio. Magnam.</p>
+                        <p>Para la ejecución del jardín vertical, nos encargamos de todo el proceso desde la preparación
+                            del sitio hasta la instalación final. Utilizamos materiales de alta calidad y técnicas
+                            especializadas para asegurar un resultado duradero y estéticamente atractivo. Nos encargamos
+                            del montaje, del sistema de riego adecuado y la disposición cuidadosa de las plantas,
+                            asegurando que cada elemento contribuya al diseño general y al bienestar del espacio.</p>
                     </figcaption>
                 </figure>
-            </div>            
+            </div>
         </div>
+        <a href="contacto.html#contactanos" class="cctWhite20">Consultanos</a>
         <div id="paisajismoYParquizacion">
-            <h4>PAISAJISMO Y PARQUIZACION</h4>
-            <h5>¿De qué forma transformamos tu espacio?</h5>
+            <div class="titleServicios">
+                <hr>
+                <h4>PAISAJISMO Y PARQUIZACION</h4>
+                <p>Nos apasiona diseñar espacios verdes que transformen tu espacio en un verdadero punto de conexión con
+                    la naturaleza. En Dagoba, estamos aquí para ayudarte a transformar tu entorno y convertirlo en un
+                    refugio natural.</p>
+                <h5>¿De qué forma transformamos tu espacio?</h5>
+            </div>
             <div class="descripcionServicios">
                 <figure>
-                    <img src="Imagenes/planificacion.png" alt="Planificacion parque">
+                    <img src="Imagenes/visita_01.jpg" alt="Planificacion parque">
                     <figcaption>
                         <h6>PLANIFICACION</h6>
-                        <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate optio sunt harum nostrum praesentium quisquam labore ab, quasi in, quas voluptas architecto exercitationem aliquam nemo tenetur blanditiis! Error, aliquid in?</P>
+                        <p>Para crear o transformar tu espacio, es importante considerar y la orientación de estos para
+                            evaluar la exposición al sol, al viento y otros factores determinantes en la elección de las
+                            plantas según sus necesidades.</p>
+                        <p>Agendamos una visita inicial al lugar para diseñar tu espacio, abordando estos aspectos. A
+                            partir de esta visita, definimos objetivos y la transformación del espacio.</p>
                     </figcaption>
                 </figure>
             </div>
             <div class="descripcionServicios">
                 <figure>
-                    <img src="Imagenes/diseño2.png" alt="Diseño parque">
+                    <img src="Imagenes/disenio_01.jpg" alt="Diseño parque">
                     <figcaption>
                         <h6>RENDER</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime tenetur ab, recusandae dolores animi quidem, reprehenderit facere ipsum odio distinctio quod cum eos non nam delectus suscipit aperiam! Quam, ex!</p>
+                        <p>Una vez realizada la visita, elaboramos el diseño para que puedas visualizar el trabajo
+                            final.</p>
+                        <p>Nuestros diseños incluyen diversas opciones de materiales, tamaños y colores de plantas
+                            disponibles. En el presupuesto se detallan todos los materiales necesarios para la
+                            transformación del espacio.</p>
                     </figcaption>
                 </figure>
             </div>
             <div class="descripcionServicios">
                 <figure>
-                    <img src="Imagenes/manosobra2.png" alt="Plantacion parque">
+                    <img src="Imagenes/trabajo_01.jpg" alt="Plantacion parque">
                     <figcaption>
                         <h6>ARMADO</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, incidunt magni exercitationem iusto temporibus quod harum dolor, quia alias, aperiam eaque hic. Eius autem ipsa enim soluta error, et sint!</p>
+                        <p>Tras planificar y diseñar el espacio, nos ocupamos de su transformación. Llevamos todos los
+                            materiales necesarios, preparamos el entorno y comenzamos con la etapa final del proyecto.
+                        </p>
+                        <p>Plasmamos el diseño en cada detalle. Nuestro equipo crea el ambiente deseado, garantizando
+                            que cada elemento contribuya a la estética y funcionalidad del espacio.</p>
                     </figcaption>
                 </figure>
             </div>
         </div>
+        <a href="contacto.html#contactanos" class="cctWhite20">Consultanos</a>
         <div id="nuestroVivero">
-            <h4>NUESTRO VIVERO</h4>
-            <h5>¿Cómo podes obtener nuestras plantas?</h5>
-            <div class="descripcionServicios">
+            <div class="titleServicios">
+                <hr>
+                <h4>NUESTRO VIVERO</h4>
+                <p>Te ofrecemos una cuidada selección de plantas y árboles de alta calidad, ideales para transformar tu
+                    espacio. Desde plantas de interior vibrantes hasta árboles ornamentales para jardines, garantizamos
+                    especies adaptadas a nuestro clima local. Visítanos para descubrir cómo podemos ayudarte a crear
+                    espacios verdes excepcionales y transformar tus ideas en realidad.</p>
+                <h5>¿Cómo podes obtener nuestras plantas?</h5>
+            </div>
+            <div class="descripcionServiciosTienda">
                 <figure>
                     <img src="Imagenes/various-cactus-flower-plants-greenhouse.jpg">
                     <figcaption>
                         <h6>TIENDA PRESENCIAL</h6>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia veniam hic quos, laborum sunt eius enim earum officiis veritatis. Illo libero sequi pariatur ipsam aperiam. Distinctio ex optio temporibus earum?</p>
+                        <p>Encontrá nuestra ubicación, te esperamos para asesorarte en lo que necesites.</p>
                     </figcaption>
                 </figure>
-            </div>        
-            <div class="descripcionServicios">
+                <button class="cctWhite20BtnUbi" onclick=showubiGoogle()>Ver
+                    ubicación</button>
+            </div>
+            <div class="descripcionServiciosTienda">
                 <figure>
                     <img src="Imagenes/close-up-hands-holding-smartphone.jpg">
                     <figcaption>
                         <h6>TIENDA VIRTUAL</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae fuga at distinctio, impedit, ipsam itaque eligendi provident asperiores velit deserunt rem? Facere laborum et eaque magnam quaerat minus. Obcaecati.</p>
+                        <p>Ingresá en nuestra tienda y encontrá esa planta que estás buscando.</p>
                     </figcaption>
                 </figure>
+                <button class="cctWhite20Btn" onclick="redirectToShop()">Ver tienda</button>
             </div>
         </div>
     </section>
@@ -194,7 +355,7 @@
                             </div>
                         </li>
                     </ul>
-                    </div>
+                </div>
                 <div class="footerInfoContenedorB">
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -208,9 +369,12 @@
                 <div class="footerInfoContenedorC">
                     <hr class="hrContenedorC">
                     <ul>
-                        <li><a href="https://www.instagram.com/" target="_blank"><img src="Imagenes/instagram-white.png" alt="facebook"></a></li>
-                        <li><a href="https://ar.linkedin.com/" target="_blank"><img src="Imagenes/linkedin-white.png" alt="Linkedin"></a></li>
-                        <li><a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img src="Imagenes/facebook-white.png" alt="facebook"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="Imagenes/instagram-white.png"
+                                    alt="facebook"></a></li>
+                        <li><a href="https://ar.linkedin.com/" target="_blank"><img src="Imagenes/linkedin-white.png"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img
+                                    src="Imagenes/facebook-white.png" alt="facebook"></a></li>
                     </ul>
                 </div>
             </div>

@@ -11,7 +11,7 @@
     font-style: normal;
 }
 
-header{
+header {
     background-image: url(Imagenes/Fondov2.jpg);
     background-size: cover;
     height: 100vh;
@@ -21,6 +21,29 @@ header{
 
 /*------------------MENU---------Y---------BOTONES-----------*/
 
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu img {
+    width: 150px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s ease-out;
+}
+
+.menu li {
+    margin: 10px;
+    padding: 20px;
+    display: inline-block;
+}
+
 .menu .icon {
     display: none;
     float: right;
@@ -29,8 +52,25 @@ header{
     cursor: pointer;
 }
 
-.menu .logo-black {
+.menu .logo-black,
+.menu .kart-black,
+.menu .kart-default {
     display: none;
+}
+
+.menu li img,
+.menu .kart-black img {
+    width: 40px;
+}
+
+.menu li span {
+    background-color: green;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: whitesmoke;
+    padding: 3px 8px;
 }
 
 nav a,
@@ -89,7 +129,9 @@ nav a:not(:has(img)):hover,
     transition: border-color, background-color 0.5s;
 }
 
-.cctWhite20 {
+.cctWhite20,
+.cctWhite20Btn,
+.cctWhite20BtnUbi {
     text-decoration: none;
     color: gray;
     font-size: 20px;
@@ -100,41 +142,25 @@ nav a:not(:has(img)):hover,
     transition: border-color, background-color 0.5s;
 }
 
-.cctWhite20:hover {
+.cctWhite20Btn,
+.cctWhite20BtnUbi {
+    cursor: pointer;
+}
+
+.cctWhite20:hover,
+.cctWhite20Btn:hover,
+.cctWhite20BtnUbi:hover {
     color: whitesmoke;
     border-color: gray;
     background-color: gray;
     transition: border-color, background-color 0.5s;
 }
 
-.menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menu img {
-    width: 150px;
-}
-
-.menu ul{
-    list-style: none;
-    display: flex;
-    transition: max-height 0.5s ease-out;
-}
-
-.menu li{
-    margin: 10px;
-    padding: 20px;
-    display: inline-block;
-    justify-content: flex-end;
-}
-
 #principal {
     padding: 8rem 0rem 0rem 15rem;
 }
 
-#principal > div{
+#principal>div {
     max-width: 500px;
 }
 
@@ -151,12 +177,14 @@ nav a:not(:has(img)):hover,
 #contactanos,
 #infoServicios,
 #nuestrosProyectos,
-#tiendaDagoba {
+#tiendaDagoba,
+#miUsuario {
     margin-top: 0;
     text-align: center;
 }
 
-#nuestrosServicios {
+#nuestrosServicios,
+#miUsuario {
     background-color: rgb(241, 241, 241);
     padding-top: 10px;
 }
@@ -179,6 +207,7 @@ nav a:not(:has(img)):hover,
 .acercaNuesrtoContenedorA,
 .acercaNuesrtoContenedorB,
 .descripcionServicios,
+.descripcionServiciosTienda,
 .listadoProyectos {
     width: 500px;
     height: auto;
@@ -189,12 +218,17 @@ nav a:not(:has(img)):hover,
 }
 
 .descripcionServicios,
+.descripcionServiciosTienda,
 .listadoProyectos {
     width: 400px;
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
 }
+
+/*.descripcionServiciosTienda {
+    vertical-align: middle;
+}*/
 
 .listadoProyectos {
     height: 300px;
@@ -204,44 +238,45 @@ nav a:not(:has(img)):hover,
     overflow: hidden;
 }
 
-.acercaNuesrtoContenedorB{
+.acercaNuesrtoContenedorB {
     text-align: right;
 }
 
 .nuestrosServiciosContenedor hr,
-.algunosProyectosTitle hr {
+.algunosProyectosTitle hr,
+.titleServicios hr,
+.miUsuarioContenedor hr {
+    margin-top: 35px;
     width: 70%;
     display: inline-block;
 }
 
-.algunosProyectos,
-.nuestrosServiciosContenedor {
+.nuestrosServiciosContenedor,
+.miUsuarioContenedor {
     margin: 30px auto;
     display: inline-block;
 }
 
-.nuestrosServiciosContenedor {
+.nuestrosServiciosContenedor,
+.miUsuarioContenedor {
     width: 400px;
 }
 
-.acercaNuesrtoContenedorB img{
+.acercaNuesrtoContenedorB img {
     width: 400px;
     height: 400px;
 }
 
-.nuestrosServiciosContenedor img {
+.nuestrosServiciosContenedor img,
+.miUsuarioContenedor img {
     width: 100px;
     height: 100px;
     display: inline-block;
     vertical-align: top;
 }
 
-.algunosProyectos img {
-    width: 400px;
-    height: 600px;
-}
-
 .descripcionServicios img,
+.descripcionServiciosTienda img,
 .listadoProyectos img {
     width: 100%;
     height: auto;
@@ -274,10 +309,8 @@ footer {
 }
 
 .hrLogoFooter {
+    margin-left: 15%;
     width: 70%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .footerInfo {
@@ -287,7 +320,7 @@ footer {
     width: 100%;
 }
 
-.footerInfo img{
+.footerInfo img {
     width: 30px;
 }
 
@@ -303,7 +336,7 @@ footer {
 
 .footerInfoContenedorA ul,
 .footerInfoContenedorB ul,
-.footerInfoContenedorC ul{
+.footerInfoContenedorC ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -345,9 +378,9 @@ footer {
     display: none;
 }
 
-footer ul li:nth-child(4) {
-    display: none; /* Inicialmente oculto */
-}
+/*footer ul li:nth-child(4) {
+    display: none; /* Inicialmente oculto *
+}*/
 
 /*---------------------------FUENTES-Y-TEXTOS--------------------------------*/
 
@@ -361,18 +394,19 @@ footer ul li:nth-child(4) {
     padding: 10px;
 }
 
-.h3Header{
+.h3Header {
     font-size: 20pt;
     padding: 15px;
 }
 
-.acercaNuesrtoContenedorA h3{
+.acercaNuesrtoContenedorA h3 {
     font-size: 20pt;
     color: black;
 }
 
 .acercaNuesrtoContenedorA p,
-#nuestrosServicios h2 {
+#nuestrosServicios h2,
+#miUsuario h2 {
     font-size: 30pt;
     font-family: caligsa;
     color: black;
@@ -392,22 +426,32 @@ footer ul li:nth-child(4) {
 #nuestrosProyectos h2,
 #tiendaDagoba h2,
 .contenidoNuestrosServicios h3,
-.algunosProyectosTitle h2 {
+.algunosProyectosTitle h2,
+.contenidoMiUsuario h3 {
     font-family: caligsa;
     padding: 20px;
 }
 
 .contenidoNuestrosServicios h3,
 .contenidoNuestrosServicios p,
-.contenidoNuestrosServicios a {
+.contenidoNuestrosServicios a,
+#infoServicios a,
+.descripcionServiciosTienda button,
+.descripcionServiciosTienda a,
+.contenidoMiUsuario h3,
+.contenidoMiUsuario p,
+.contenidoMiUsuario button {
     margin: 10px;
     padding: 10px;
 }
 
 #sobreNosotros p,
 .contenidoNuestrosServicios p,
-.descripcionServicios p {
+.descripcionServicios p,
+.descripcionServiciosTienda p,
+.contenidoMiUsuario p {
     text-align: left;
+    padding-top: 7px;
 }
 
 #sobreNosotros h3 {
@@ -420,9 +464,15 @@ footer ul li:nth-child(4) {
     margin-right: 20px;
 }
 
+.titleServicios p {
+    font-size: 14pt;
+    margin: 15px 40px 15px 40px;
+}
+
 #infoServicios h4,
 #infoServicios h5,
-.descripcionServicios h6 {
+.descripcionServicios h6,
+.descripcionServiciosTienda h6 {
     font-family: caligsa;
     font-size: 25pt;
     color: black;
@@ -434,12 +484,12 @@ footer ul li:nth-child(4) {
     padding: 10px;
 }
 
-.descripcionServicios h6 {
+.descripcionServicios h6,
+.descripcionServiciosTienda h6 {
     font-family: Montserrat;
     font-size: 10pt;
     padding: 10px;
 }
-
 
 
 /*-----------------------CONTACTO--------------------------------*/
@@ -451,7 +501,7 @@ footer ul li:nth-child(4) {
     padding: 20px;
 }
 
-.contenedorContacto img{
+.contenedorContacto img {
     height: 30px;
     vertical-align: middle;
     margin-right: 10px;
@@ -474,148 +524,200 @@ footer ul li:nth-child(4) {
     flex: 1;
 }
 
-form {
+form,
+.contenidoErrorTienda,
+.contenidoPagoConfirmado,
+.contenidoUbicacion,
+.contenidoContactoConfirmado,
+.contenidoErrorUsuario {
     max-width: 400px;
 }
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid lightgray;
-    border-radius: 10px;
-    box-sizing: border-box;
+
+.modal-content-pago {
+    max-width: 700px;
 }
 
 input[type="submit"] {
     color: rgb(21, 21, 21);
     cursor: pointer;
+    transition: 0.5s;
 }
+
 input[type="submit"]:hover {
     background-color: grey;
     color: whitesmoke;
+    transition: 0.5s;
 }
 
 textarea {
-    height: 100px; 
+    height: 100px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
     resize: none;
-    }
-
-    /************** LOGIN FORM ***************/
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  box-sizing: border-box;
 }
 
-.cctWhiteHeaderRegistro{
+/************** LOGIN FORM ***************/
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=email],
+input[type=submit],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.cctWhiteHeaderRegistro {
     border-style: none;
 }
 
-button {
+.botonPrincipal button {
     background-color: rgba(0, 0, 0, 0);
     border-width: 3px;
     border-color: whitesmoke;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .signupbtn,
 .signinbtn,
-.cancelbtn {
+.cancelbtn,
+.pagarBtn {
     background-color: #04AA6D;
     text-decoration: none;
     color: whitesmoke;
     font-size: 25px;
     padding: 14px 20px;
     margin: 8px 0;
-    border-style: solid;
+    border-style: none;
     border-radius: 10px;
     cursor: pointer;
     width: 100%;
+    transition: 0.5s;
 }
 
-.signupbtn button :hover,
-.signinbtn button :hover,
-.cancelbtn button :hover {
-  opacity: 0.7;
+.signupbtn:hover,
+.signinbtn:hover,
+.cancelbtn:hover,
+.pagarBtn:hover {
+    opacity: 0.8;
+    transition: 0.5s;
 }
 
 .signupbtn,
-.cancelbtn {
+.cancelbtn,
+.pagarBtn {
     width: auto;
     padding: 10px 18px;
 }
 
 .cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
 }
 
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+.imgcontainer,
+.imgErrorTienda,
+.imgcheckOut,
+.imgPagoConfirmado,
+.iframeUbicacion,
+.imgContactoConfirmado,
+.imgErrorUsuario {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
 }
 
-img.avatar {
-  width: 80%;
-  border-radius: 50%;
-  margin: 10px;
+img.avatar,
+img.avatarCheckout,
+.iframeUbicacion iframe {
+    width: 80%;
+    border-radius: 50%;
+    margin: 10px;
 }
 
-.container {
-  padding: 16px;
+.iframeUbicacion iframe {
+    border-radius: 10px;
+}
+
+img.avatarCheckout {
+    width: 50%;
+}
+
+.formularioPago {
+    display: inline-flex;
+}
+
+.container,
+.containerErrorTienda,
+.containerPago,
+.containerPagoConfirmado,
+.containerUbicacion,
+.containerContactoConfirmado,
+.containerErrorUsuario {
+    padding: 16px;
 }
 
 span.psw {
-  float: right;
-  padding-top: 16px;
+    float: right;
+    padding-top: 16px;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-  padding-top: 30px;
+.modal,
+.errorTienda,
+.modalCheckOut,
+.pagoConfirmado,
+.nuestraUbicacion,
+.contactoEnviado,
+.userError {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 30px;
 }
 
-.modal-content {
-  background-color: whitesmoke;
-  margin: 5% auto 15% auto;
-  border-radius: 10px;
-  width: 80%;
+.modal-content,
+.contenidoErrorTienda,
+.modal-content-pago,
+.contenidoPagoConfirmado,
+.contenidoUbicacion,
+.contenidoContactoConfirmado,
+.contenidoErrorUsuario {
+    background-color: whitesmoke;
+    margin: 5% auto 15% auto;
+    border-radius: 10px;
+    width: 80%;
 }
 
 .close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.5s;
 }
 
 .close:hover,
 .close:focus {
     color: red;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .clearfix {
@@ -624,31 +726,42 @@ span.psw {
 }
 
 .animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
 }
-  
+
 @keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 @media screen and (max-width: 300px) {
     span.psw {
-       display: block;
-       float: none;
+        display: block;
+        float: none;
     }
+
     .cancelbtn {
-       width: 100%;
+        width: 100%;
     }
 }
 
-  /******************** TIENDA *****************************/
+/******************** TIENDA *****************************/
 
 #contenidoTienda {
     margin-left: 20px;
@@ -664,19 +777,25 @@ span.psw {
     padding: 20px;
     border-radius: 10px;
     margin: 20px;
-  }
+}
 
-.productoTienda img{
+.productoTienda img {
     width: 100%;
     border-radius: 5px;
 }
-  
+
 .precioProducto {
     color: grey;
     font-size: 22px;
-  }
-  
-.productoTienda button {
+}
+
+.productoTienda button,
+.errorTienda button,
+.pagoConfirmado button,
+.nuestraUbicacion button,
+.contactoEnviado button,
+.formularioContacto button,
+.userError button {
     border: none;
     border-radius: 10px;
     outline: 0;
@@ -687,22 +806,264 @@ span.psw {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-  }
-  
-.productoTienda button:hover {
-    opacity: 0.7;
-  }
+    transition: 0.5s;
+}
 
-  .productoTienda p,
-  .productoTienda button {
+.productoTienda button:hover,
+.errorTienda button:hover,
+.pagoConfirmado button:hover,
+.nuestraUbicacion button:hover,
+.contactoEnviado button:hover,
+.formularioContacto button:hover,
+.userError button:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.productoTienda p,
+.errorTienda p,
+.productoTienda button,
+.errorTienda button,
+.pagoConfirmado p,
+.pagoConfirmado button,
+.nuestraUbicacion p,
+.nuestraUbicacion button,
+.contactoEnviado p,
+.contactoEnviado button,
+.formularioContacto button,
+.userError p,
+.userError button {
     margin-top: 5px;
 }
+
+/******************************************* CARRITO ******************************************/
+
+.contenidoCarrito {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: whitesmoke;
+    border-radius: 0px 0px 10px 10px;
+    max-height: 100vh;
+    overflow-y: scroll;
+    transition: 0.5s;
+}
+
+.contenidoCarrito h1 {
+    color: gray;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contenidoCarrito .checkOut {
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.contenidoCarrito .checkOut div,
+.pagoTienda {
+    color: whitesmoke;
+    background-color: green;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagoTienda {
+    display: none;
+}
+
+.contenidoCarrito .checkOut div:nth-child(1) {
+    background-color: gray;
+    cursor: auto;
+}
+
+.contenidoCarrito .checkOut div:nth-child(2) {
+    background-color: #1C1F25;
+    color: whitesmoke;
+}
+
+.contenidoCarrito .checkOut div:nth-child(2):hover,
+.pagoTienda:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.productosCarrito ul {
+    height: 50%;
+    overflow-y: auto;
+}
+
+
+.productosCarrito li {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 100px repeat(2, 1fr);
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    color: black;
+    row-gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.productosCarrito li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productosCarrito li img,
+.productosCarrito li div,
+.productosCarrito li button {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.productosCarrito li button {
+    max-width: 60px;
+    height: auto;
+    color: whitesmoke;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.productosCarrito .count {
+    margin: 0 10px;
+}
+
+/**************************************SLIDESHOW************************************************/
+
+.mySlides {
+    display: none
+}
+
+.mySlides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Position the "next button" to the right */
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+/* Caption text */
+.text {
+    color: whitesmoke;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: whitesmoke;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dotSlider {
+    text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
 
 /***************************************RESPONSIVE*******************************************/
 
 @media screen and (max-width: 1300px) {
 
-    .menu li{
+    .menu li {
         margin: 5px;
         padding: 7px;
     }
@@ -710,23 +1071,23 @@ span.psw {
 }
 
 
-/***************************** 1025 **********************************/
+/***************************** 1035 **********************************/
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1035px) {
 
     #menuNavegacion {
         position: fixed;
         width: 100%;
     }
 
-    .menu{
+    .menu {
         background-color: whitesmoke;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         border: rgba(211, 211, 211, 0.5) solid;
         border-top: none;
     }
-    
+
     nav a {
         font-size: 95%;
         color: black;
@@ -749,9 +1110,9 @@ span.psw {
     .menu .logo-default {
         display: none;
     }
-    
+
     .menu .logo-black {
-        display: block;
+        display: inline-block;
     }
 
     .menu li {
@@ -769,60 +1130,74 @@ span.psw {
         padding: 10px;
         cursor: pointer;
     }
-    
+
     .menu .icon img {
         width: 35px;
     }
-    
+
     .menu.active ul {
         display: block;
     }
 
-    .menu li{
+    .menu li {
         margin: 10px;
         padding: 8px;
     }
-    
+
     #principal {
         padding: 10rem 0rem 0rem 5rem;
     }
-    
-    #principal > div{
+
+    #principal>div {
         max-width: 500px;
     }
-    
+
     .h1Header {
         font-size: 45pt;
     }
-    
+
     .h3Header {
         font-size: 18pt;
     }
 
     .acercaNuesrtoContenedorA,
-    .acercaNuesrtoContenedorB {
+    .acercaNuesrtoContenedorB,
+    .contenidoNuestrosServicios p,
+    .descripcionServicios p,
+    .descripcionServiciosTienda p,
+    #sobreNosotros p,
+    .contenidoMiUsuario p {
         text-align: center;
     }
 
     .acercaNuesrtoContenedorA p,
-    #nuestrosServicios h2 {
-    font-size: 25pt;
+    #nuestrosServicios h2,
+    #miUsuario h2 {
+        font-size: 25pt;
     }
 
     .acercaNuesrtoContenedorA,
     .acercaNuesrtoContenedorB,
     .descripcionServicios,
+    .descripcionServiciosTienda,
     .listadoProyectos {
-    width: auto;
+        width: auto;
     }
 
-    .contenidoNuestrosServicios p {
-        text-align: center;
+    .descripcionServicios img,
+    .descripcionServiciosTienda img,
+    .listadoProyectos img {
+        width: 75%;
+        border-radius: 10px;
     }
 
+    #sobreNosotros p,
+    .contenidoNuestrosServicios p,
     .descripcionServicios p,
-    #sobreNosotros p {
-        text-align: center;
+    .descripcionServiciosTienda p,
+    .contenidoMiUsuario p {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .footerInfo {
@@ -843,12 +1218,12 @@ span.psw {
         display: inline-block;
     }
 
-    .footerInfo img{
+    .footerInfo img {
         width: 25px;
     }
 
     .footerInfoContenedorA,
-        .footerInfoContenedorC {
+    .footerInfoContenedorC {
         margin: 5px;
     }
 
@@ -863,123 +1238,34 @@ span.psw {
 
 }
 
+
+/***************************** 900 **********************************/
+
+@media screen and (max-width: 900px) {
+    .formularioPago {
+        flex-direction: column;
+    }
+}
+
+
 /***************************** 630 **********************************/
 
 @media screen and (max-width: 630px) {
 
-    #menuNavegacion {
-        position: fixed;
-        width: 100%;
-    }
-
-    .menu{
-        background-color: whitesmoke;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border: rgba(211, 211, 211, 0.5) solid;
-        border-top: none;
-    }
-    
     nav a {
         font-size: 90%;
-        color: black;
     }
 
-    .menu ul {
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background-color: whitesmoke;
-        width: 100%;
-        text-align: center;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border: rgba(211, 211, 211, 0.5) solid;
-        border-top: none;
-    }
-
-    .menu .logo-default {
-        display: none;
-    }
-    
-    .menu .logo-black {
-        display: block;
-    }
-
-    .menu li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .menu.active ul {
-        max-height: 500px;
-    }
-
-    .menu .icon {
-        display: block;
-        float: right;
-        padding: 10px;
-        cursor: pointer;
-    }
-    
-    .menu .icon img {
-        width: 35px; /* Ajusta el tamaño del ícono según sea necesario */
-    }
-    
-    .menu.active ul {
-        display: block; /* Mostrar la lista de enlaces cuando se hace clic */
-    }
-
-    .menu li{
-        margin: 10px;
-        padding: 8px;
-    }
-    
     #principal {
         padding: 10rem 0rem 0rem 4rem;
     }
-    
-    #principal > div{
-        max-width: 500px;
-    }
-    
+
     .h1Header {
         font-size: 40pt;
     }
-    
+
     .h3Header {
         font-size: 15pt;
-    }
-
-    .acercaNuesrtoContenedorA,
-    .acercaNuesrtoContenedorB {
-        text-align: center;
-    }
-
-    .acercaNuesrtoContenedorA p,
-    #nuestrosServicios h2 {
-    font-size: 25pt;
-    }
-
-    .acercaNuesrtoContenedorA,
-    .acercaNuesrtoContenedorB,
-    .descripcionServicios,
-    .listadoProyectos {
-    width: auto;
-    }
-
-    .contenidoNuestrosServicios p {
-        text-align: center;
-    }
-
-    .descripcionServicios p,
-    #sobreNosotros p {
-        text-align: center;
-    }
-
-    .footerInfo {
-        flex-direction: column;
     }
 
     .footerInfoContenedorA ul,
@@ -987,169 +1273,55 @@ span.psw {
         font-size: 80%;
     }
 
-    .footerInfoContenedorA li {
-        text-align: center;
-        flex-direction: column;
-    }
-
-    .footerInfoContenedorC li {
-        display: inline-block;
-    }
-
-    .footerInfo img{
-        width: 25px;
-    }
-
     .footerInfoContenedorA,
-        .footerInfoContenedorC {
+    .footerInfoContenedorC {
         margin: 2px;
     }
-
-    .footerInfoContenedorB {
-        display: none;
-    }
-
-    .footerInfoContenedorC hr {
-        display: flex;
-        margin: 10px;
-    }
-
 }
 
 /***************************** 480 **********************************/
 
 @media screen and (max-width: 480px) {
 
-    #menuNavegacion {
-        position: fixed;
-        width: 100%;
-    }
-
     .cctWhiteHeader,
     .cctBlack,
     .cctWhiteHeaderRegistro,
-    .cctWhite20 {
-    font-size: 90%;
-}
-
-    .menu{
-        background-color: whitesmoke;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border: rgba(211, 211, 211, 0.5) solid;
-        border-top: none;
+    .cctWhite20,
+    .cctWhite20Btn,
+    .cctWhite20BtnUbi {
+        font-size: 90%;
     }
-    
+
     nav a {
         font-size: 85%;
-        color: black;
     }
 
-    .menu ul {
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background-color: whitesmoke;
-        width: 100%;
-        text-align: center;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border: rgba(211, 211, 211, 0.5) solid;
-        border-top: none;
-    }
-
-    .menu .logo-default {
-        display: none;
-    }
-    
-    .menu .logo-black {
-        display: block;
-    }
-
-    .menu li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .menu.active ul {
-        max-height: 500px;
-    }
-
-    .menu .icon {
-        display: block;
-        float: right;
-        padding: 10px;
-        cursor: pointer;
-    }
-    
-    .menu .icon img {
-        width: 35px;
-    }
-    
-    .menu.active ul {
-        display: block;
-    }
-
-    .menu li{
-        margin: 10px;
-        padding: 8px;
-    }
-    
     #principal {
-        padding: 15rem 0rem 0rem 0.5rem;
+        padding: 10rem 0rem 0rem 0.5rem;
     }
-    
-    #principal > div{
-        max-width: 500px;
-    }
-    
+
     .h1Header {
         font-size: 35pt;
     }
-    
+
     .h3Header {
         font-size: 12pt;
     }
 
-    .acercaNuesrtoContenedorA,
-    .acercaNuesrtoContenedorB {
-        text-align: center;
-    }
-
     .acercaNuesrtoContenedorA p,
-    #nuestrosServicios h2 {
-    font-size: 18pt;
+    #nuestrosServicios h2,
+    #miUsuario h2 {
+        font-size: 18pt;
     }
 
-    .acercaNuesrtoContenedorA,
-    .acercaNuesrtoContenedorB,
-    .descripcionServicios,
-    .listadoProyectos {
-    width: auto;
-    }
-
-    .acercaNuesrtoContenedorB img,
-    .algunosProyectos img {
+    .acercaNuesrtoContenedorB img {
         width: 90%;
         height: 90%;
     }
 
-    .nuestrosServiciosContenedor {
+    .nuestrosServiciosContenedor,
+    .miUsuarioContenedor {
         width: 90%;
-    }
-
-    .contenidoNuestrosServicios p {
-        text-align: center;
-    }
-
-    .descripcionServicios p,
-    #sobreNosotros p {
-        text-align: center;
-    }
-
-    .footerInfo {
-        flex-direction: column;
     }
 
     .footerInfoContenedorA ul,
@@ -1157,31 +1329,44 @@ span.psw {
         font-size: 80%;
     }
 
-    .footerInfoContenedorA li {
-        text-align: center;
-        flex-direction: column;
-    }
-
-    .footerInfoContenedorC li {
-        display: inline-block;
-    }
-
-    .footerInfo img{
-        width: 25px;
-    }
-
     .footerInfoContenedorA,
-        .footerInfoContenedorC {
+    .footerInfoContenedorC {
         margin: 2px;
     }
 
-    .footerInfoContenedorB {
+    #infoServicios h4 {
+        font-size: 18pt;
+    }
+
+}
+
+/**************************** RESPONSIVE POR HEIGHT ***************************************/
+
+@media screen and (max-height: 670px) {
+    #principal {
+        padding: 6rem 0rem 0rem 2rem;
+    }
+
+    .h1Header {
         display: none;
     }
 
-    .footerInfoContenedorC hr {
-        display: flex;
-        margin: 10px;
+    .cctWhiteHeader {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-height: 420px) {
+
+    #principal {
+        padding: 2rem 0rem 0rem 2rem;
+    }
+}
+
+@media screen and (max-height: 320px) {
+
+    #principal {
+        padding: 1rem 0rem 0rem 2rem;
     }
 
 }

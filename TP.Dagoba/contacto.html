@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dagoba . zen - Contacto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <section id="menuNavegacion">
@@ -20,6 +23,10 @@
                     <a href="index.html" class="logo-black">
                         <img src="Imagenes/Logo_DGB_Black.png" alt="Dagoba logo">
                     </a>
+                    <a href="carrito.html" class="kart-black" id="kart-black"><img src="Imagenes/bolso.png"
+                            alt="compra">
+                        <span class="cantidadCarrito">0</span>
+                    </a>
                     <a href="#" class="icon" onclick="toggleMenu()">
                         <img src="Imagenes/menu.png" alt="Menú">
                     </a>
@@ -29,6 +36,12 @@
                         <li><a href="nosotros.html">Nosotros</a></li>
                         <li><a href="tienda.html">Tienda</a></li>
                         <li><a href="#contacto" class="activo">Contacto</a></li>
+                        <li>
+                            <a href="carrito.html" class="kart-default" id="kart-default">
+                                <img src="Imagenes/bolso_white.png" alt="compra">
+                                <span class="cantidadCarrito">0</span>
+                            </a>
+                        </li>
                         <li><a href="login.html" id="loginLink">Iniciar sesión</a></li>
                     </ul>
                 </div>
@@ -38,7 +51,8 @@
             <div>
                 <h1 class="h1Header">DAGOBA</h1>
                 <h1 class="h1Header">. ZEN</h1>
-                <h3 class="h3Header">Encuentra la serenidad en tu propio mundo: Transformamos tus espacios con armonía, donde los espacios cobran vida, convirtiendolo en un punto zen.</h3>
+                <h3 class="h3Header">Ponte en contacto con nosotros y te guiaremos en cada paso del camino. Completa el
+                    formulario o contáctanos directamente para iniciar la transformación de tu espacio.</h3>
                 <div class="botonPrincipal">
                     <a href="#contactanos" class="cctWhiteHeader">Contactanos</a>
                 </div>
@@ -46,6 +60,96 @@
         </section>
     </header>
     <section id="contactanos">
+        <div class="contenidoCarrito">
+            <h1>Carrito de compras</h1>
+            <ul class="productosCarrito"></ul>
+            <div class="pagoTienda" onclick="showModalid04()">
+                <p>Finalizar compra</p>
+            </div>
+            <div class="checkOut">
+                <div class="total">
+                    <p>0</p>
+                </div>
+                <div class="cerrarCarrito">
+                    <p>Cerrar</p>
+                </div>
+            </div>
+        </div>
+        <div id="id04" class="modalCheckOut">
+            <form class="modal-content-pago animate">
+                <div class="imgcheckOut">
+                    <span onclick=hideModalid04() class="close" title="Cerrar">&times;</span>
+                </div>
+                <div class="formularioPago">
+                    <div class="containerPago">
+                        <h1>Datos de pago</h1>
+                        <label for="nombreCompTarjeta"><b>Nombre en tarjeta:</b></label>
+                        <input type="text" id="nombreCompTarjeta" name="nombreCompTarjeta"
+                            placeholder="Daniel Ignacio Galeano" required>
+                        <label for="nroTarjeta"><b>Ingrese los 16 dígitos de su tarjeta</b></label>
+                        <input type="number" id="nroTarjeta" name="nroTarjeta" min="1111111111111111"
+                            max="9999999999999999" placeholder="Sin espacios o guiones" required>
+                        <label for="mesVence"><b>Mes de vencimiento</b></label>
+                        <input type="number" id="mesVence" min="01" max="12" placeholder="Ingrese el mes de vencimiento"
+                            name="mesVence" required>
+                        <label for="anioVence"><b>Año de vencimiento</b></label>
+                        <input type="number" id="anioVence" name="anioVence" min="2024" max="9999"
+                            placeholder="Ingrese el año de vencimiento" required>
+                        <label for="ccv"><b>Código de seguridad</b></label>
+                        <input type="number" id="ccv" name="ccv" min="111" max="999"
+                            placeholder="Ingrese el código de seguridad" required>
+                    </div>
+                    <div class="containerPago">
+                        <h1>Datos de entrega</h1>
+                        <label for="nombreCompleto"><b>Nombre completo:</b></label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto"
+                            placeholder="Daniel Ignacio Galeano" required>
+                        <label for="dirEntrega"><b>Dirección de entrega</b></label>
+                        <input type="text" id="dirEntrega" name="dirEntrega" placeholder="Calle Falsa 123" required>
+                        <label for="localidadEntrega"><b>Localidad de entrega</b></label>
+                        <input type="text" id="localidadEntrega" name="localidadEntrega"
+                            placeholder="Ingeniero Maschwitz" required>
+                        <label for="provinciaEntrega"><b>Provincia de entrega</b></label>
+                        <input type="text" id="provinciaEntrega" name="provinciaEntrega" placeholder="Buenos Aires"
+                            required>
+                        <label for="cPostal"><b>Código postal</b></label>
+                        <input type="number" id="cPostal" name="cPostal" min="1111" max="9999"
+                            placeholder="Ingrese su código postal" required>
+                        <label>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <button type="button" class="pagarBtn" onclick="pagoExitoso()">Confirmar pago</button>
+                    <button type="button" onclick=hideModalid04() class="cancelbtn">Cancelar pago</button>
+                </div>
+            </form>
+        </div>
+        <div id="id05" class="pagoConfirmado animate">
+            <div class="contenidoPagoConfirmado">
+                <div class="imgPagoConfirmado">
+                    <img src="Imagenes/check_3d-rendering-cartoon-cacti-with-friendly-face.jpg" alt="Avatar"
+                        class="avatar">
+                </div>
+                <div class="containerPagoConfirmado">
+                    <h1>¡Muchas gracias por tu compra!</h1>
+                    <p>Recibirás por correo la información de entrega de tu pedido</p>
+                    <button onclick="finDeCompra()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+        <div id="formContacto" class="contactoEnviado animate">
+            <div class="contenidoContactoConfirmado">
+                <div class="imgContactoConfirmado">
+                    <span onclick=hideFormContactoEnviado() class="close" title="Cerrar">&times;</span>
+                    <img src="Imagenes/contacto_cute-leaf-cartoon-illustration.jpg" alt="Avatar" class="avatar">
+                </div>
+                <div class="containerContactoConfirmado">
+                    <h1>¡Muchas gracias por contactarte con nosotros!</h1>
+                    <p>Nos estaremos contactando a la brevedad</p>
+                    <button onclick=hideFormContactoEnviado()>Cerrar</button>
+                </div>
+            </div>
+        </div>
         <h2>Escribinos!</h2>
         <div class="contenidoContacto">
             <div class="contenedorContacto">
@@ -76,18 +180,21 @@
             </div>
             <div class="contenedorContacto">
                 <div class="formularioContacto">
-                    <form action="#" method="get">
+                    <form class="modal-content-contacto">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required>
                         <label for="apellido">Apellido:</label>
                         <input type="text" id="apellido" name="apellido" required>
                         <label for="celular">Celular:</label>
-                        <input type="tel" id="celular" name="celular" pattern="[0-9]{10}" placeholder="(11)34567890" required>
+                        <input type="tel" id="celular" name="celular" pattern="[0-9]{10}" placeholder="11 34567890"
+                            required>
                         <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" placeholder="Ingrese su correo. Ejemplo: dagoba.zen@gmail.com" required>
+                        <input type="email" id="email" name="email"
+                            placeholder="Ingrese su correo. Ejemplo: dagoba.zen@gmail.com" required>
                         <label for="comentario">Comentario:</label>
-                        <textarea id="comentario" name="comentario" placeholder="Escribinos tu consulta" required></textarea>
-                        <input type="submit" value="Enviar">
+                        <textarea id="comentario" name="comentario" placeholder="Escribinos tu consulta"
+                            required></textarea>
+                        <button type="button" onclick="contactoExitoso()">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -126,7 +233,7 @@
                             </div>
                         </li>
                     </ul>
-                    </div>
+                </div>
                 <div class="footerInfoContenedorB">
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -140,9 +247,12 @@
                 <div class="footerInfoContenedorC">
                     <hr class="hrContenedorC">
                     <ul>
-                        <li><a href="https://www.instagram.com/" target="_blank"><img src="Imagenes/instagram-white.png" alt="facebook"></a></li>
-                        <li><a href="https://ar.linkedin.com/" target="_blank"><img src="Imagenes/linkedin-white.png" alt="Linkedin"></a></li>
-                        <li><a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img src="Imagenes/facebook-white.png" alt="facebook"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="Imagenes/instagram-white.png"
+                                    alt="facebook"></a></li>
+                        <li><a href="https://ar.linkedin.com/" target="_blank"><img src="Imagenes/linkedin-white.png"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img
+                                    src="Imagenes/facebook-white.png" alt="facebook"></a></li>
                     </ul>
                 </div>
             </div>

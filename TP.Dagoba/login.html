@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dagoba . zen - Contacto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <section id="menuNavegacion">
@@ -20,6 +23,10 @@
                     <a href="index.html" class="logo-black">
                         <img src="Imagenes/Logo_DGB_Black.png" alt="Dagoba logo">
                     </a>
+                    <a href="carrito.html" class="kart-black" id="kart-black"><img src="Imagenes/bolso.png"
+                            alt="compra">
+                        <span class="cantidadCarrito">0</span>
+                    </a>
                     <a href="#" class="icon" onclick="toggleMenu()">
                         <img src="Imagenes/menu.png" alt="Menú">
                     </a>
@@ -29,6 +36,12 @@
                         <li><a href="nosotros.html">Nosotros</a></li>
                         <li><a href="tienda.html">Tienda</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
+                        <li>
+                            <a href="carrito.html" class="kart-default" id="kart-default"><img
+                                    src="Imagenes/bolso_white.png" alt="compra">
+                                <span class="cantidadCarrito">0</span>
+                            </a>
+                        </li>
                         <li><a href="#login" id="loginLink" class="activo">Iniciar sesión</a></li>
                     </ul>
                 </div>
@@ -38,20 +51,105 @@
             <div>
                 <h1 class="h1Header">DAGOBA</h1>
                 <h1 class="h1Header">. ZEN</h1>
-                <h3 class="h3Header">Encuentra la serenidad en tu propio mundo: Transformamos tus espacios con armonía, donde los espacios cobran vida, convirtiendolo en un punto zen.</h3>
+                <h3 class="h3Header">Ingresá o registrate y comenzá a llenar tu carrito de nuestros mejores productos
+                    para transformar tu espacio.</h3>
                 <div class="botonPrincipal">
-                    <button id="loginBtn" onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'" style="width:auto;" class="cctWhiteHeader">Iniciar sesión</button>
-                    <button id="signupBtn" onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none'" style="width:auto;" class="cctWhiteHeaderRegistro">Registrarse</button>
-                    <button id="logoutBtn" onclick="logout()" style="display: none; width:auto;" class="cctWhiteHeaderRegistro">Cerrar sesión</button>
+                    <button id="loginBtn"
+                        onclick=showLogin()
+                        style="width:auto;" class="cctWhiteHeader">Iniciar sesión</button>
+                    <button id="signupBtn"
+                        onclick=showSignUp()
+                        style="width:auto;" class="cctWhiteHeaderRegistro">Registrarse</button>
+                    <button id="userBtn" onclick="redirectToProfile()" class="cctWhiteHeader">Ver mi usuario</button>
+                    <button id="logoutBtn" onclick="logout()" class="cctWhiteHeaderRegistro">Cerrar sesión</button>
                 </div>
             </div>
         </section>
     </header>
     <section id="login">
+        <div class="contenidoCarrito">
+            <h1>Carrito de compras</h1>
+            <ul class="productosCarrito"></ul>
+            <div class="pagoTienda" onclick="showModalid04()">
+                <p>Finalizar compra</p>
+            </div>
+            <div class="checkOut">
+                <div class="total">
+                    <p>0</p>
+                </div>
+                <div class="cerrarCarrito">
+                    <p>Cerrar</p>
+                </div>
+            </div>
+        </div>
+        <div id="id04" class="modalCheckOut">
+            <form class="modal-content-pago animate">
+                <div class="imgcheckOut">
+                    <span onclick=hideModalid04() class="close" title="Cerrar">&times;</span>
+                </div>
+                <div class="formularioPago">
+                    <div class="containerPago">
+                        <h1>Datos de pago</h1>
+                        <label for="nombreCompTarjeta"><b>Nombre en tarjeta:</b></label>
+                        <input type="text" id="nombreCompTarjeta" name="nombreCompTarjeta"
+                            placeholder="Daniel Ignacio Galeano" required>
+                        <label for="nroTarjeta"><b>Ingrese los 16 dígitos de su tarjeta</b></label>
+                        <input type="number" id="nroTarjeta" name="nroTarjeta" min="1111111111111111"
+                            max="9999999999999999" placeholder="Sin espacios o guiones" required>
+                        <label for="mesVence"><b>Mes de vencimiento</b></label>
+                        <input type="number" id="mesVence" min="01" max="12" placeholder="Ingrese el mes de vencimiento"
+                            name="mesVence" required>
+                        <label for="anioVence"><b>Año de vencimiento</b></label>
+                        <input type="number" id="anioVence" name="anioVence" min="2024" max="9999"
+                            placeholder="Ingrese el año de vencimiento" required>
+                        <label for="ccv"><b>Código de seguridad</b></label>
+                        <input type="number" id="ccv" name="ccv" min="111" max="999"
+                            placeholder="Ingrese el código de seguridad" required>
+                    </div>
+                    <div class="containerPago">
+                        <h1>Datos de entrega</h1>
+                        <label for="nombreCompleto"><b>Nombre completo:</b></label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto"
+                            placeholder="Daniel Ignacio Galeano" required>
+                        <label for="dirEntrega"><b>Dirección de entrega</b></label>
+                        <input type="text" id="dirEntrega" name="dirEntrega" placeholder="Calle Falsa 123" required>
+                        <label for="localidadEntrega"><b>Localidad de entrega</b></label>
+                        <input type="text" id="localidadEntrega" name="localidadEntrega"
+                            placeholder="Ingeniero Maschwitz" required>
+                        <label for="provinciaEntrega"><b>Provincia de entrega</b></label>
+                        <input type="text" id="provinciaEntrega" name="provinciaEntrega" placeholder="Buenos Aires"
+                            required>
+                        <label for="cPostal"><b>Código postal</b></label>
+                        <input type="number" id="cPostal" name="cPostal" min="1111" max="9999"
+                            placeholder="Ingrese su código postal" required>
+                        <label>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <button type="button" class="pagarBtn" onclick="pagoExitoso()">Confirmar pago</button>
+                    <button type="button" onclick=hideModalid04() class="cancelbtn">Cancelar pago</button>
+                </div>
+            </form>
+        </div>
+        <div id="id05" class="pagoConfirmado animate">
+            <div class="contenidoPagoConfirmado">
+                <div class="imgPagoConfirmado">
+                    <img src="Imagenes/check_3d-rendering-cartoon-cacti-with-friendly-face.jpg" alt="Avatar"
+                        class="avatar">
+                </div>
+                <div class="containerPagoConfirmado">
+                    <h1>¡Muchas gracias por tu compra!</h1>
+                    <p>Recibirás por correo la información de entrega de tu pedido</p>
+                    <button onclick="finDeCompra()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
         <div id="id01" class="modal">
             <form class="modal-content animate" onsubmit="login(event)">
                 <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <span onclick=hideLogin() class="close"
+                        title="Cerrar">&times;</span>
                     <img src="Imagenes/cute-leaf-cartoon-illustration.jpg" alt="Avatar" class="avatar">
                 </div>
                 <div class="container">
@@ -65,7 +163,8 @@
                     </label>
                 </div>
                 <div class="container">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+                    <button type="button" onclick=hideLogin()
+                        class="cancelbtn">Cancelar</button>
                     <span class="psw">Olvidaste tu <a href="#">contraseña?</a></span>
                 </div>
             </form>
@@ -73,13 +172,15 @@
         <div id="id02" class="modal">
             <form class="modal-content animate" onsubmit="signup(event)">
                 <div class="imgcontainer">
-                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <span onclick=hideSignUp() class="close"
+                        title="Cerrar">&times;</span>
                     <img src="Imagenes/cute-leaf-cartoon-illustration (1).jpg" alt="Avatar" class="avatar">
                 </div>
                 <div class="container">
                     <h1>Registrarse</h1>
                     <label for="email"><b>Email</b></label>
-                    <input type="email" id="newuname" placeholder="Ingrese su correo. Ejemplo: dagoba.zen@gmail.com" name="email" required>
+                    <input type="email" id="newuname" placeholder="Ingrese su correo. Ejemplo: dagoba.zen@gmail.com"
+                        name="email" required>
                     <label for="psw"><b>Contraseña</b></label>
                     <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
                     <label for="psw-repeat"><b>Repita su contraseña</b></label>
@@ -87,15 +188,124 @@
                     <label>
                         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordarme
                     </label>
-                    <p>Al crear una cuenta usted acepta nuestros <a href="#" style="color:dodgerblue">Terminos & condiciones</a>.</p>
+                    <p>Al crear una cuenta usted acepta nuestros <a href="#" style="color:dodgerblue">Terminos &
+                            condiciones</a>.</p>
                 </div>
                 <div class="clearfix">
                     <button type="submit" class="signupbtn">Registrarse</button>
-                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
+                    <button type="button" onclick=hideSignUp()
+                        class="cancelbtn">Cancelar</button>
                 </div>
             </form>
         </div>
     </section>
+    <section id="miUsuario">
+        <div id="errorUsuario" class="userError animate">
+            <div class="contenidoErrorUsuario">
+                <div class="imgErrorUsuario">
+                    <span onclick=hideUserError() class="close"
+                        title="Cerrar">&times;</span>
+                    <img src="Imagenes/v2error_3d-rendering-cartoon-cacti-with-friendly-face (1).jpg" alt="Avatar"
+                        class="avatar">
+                </div>
+                <div class="containerErrorUsuario">
+                    <h1>¡Ups!</h1>
+                    <p>Parece que algo salió mal, por favor, volvé a intentar más tarde</p>
+                    <button onclick=hideUserError()>Cerrar</button>
+                </div>
+            </div>
+        </div>
+        <h2>Mi usuario</h2>
+        <div class="miUsuarioContenedor">
+            <img src="Imagenes/cesta.png" alt="Icono jardines verticales">
+            <div class="contenidoMiUsuario">
+                <hr>
+                <h3>MIS COMPRAS</h3>
+                <p>Ingresá para ver el estado de tus compras.</p>
+                <button id="userPanel" onclick=showUserError()
+                    class="cctWhite20Btn">Ver mis compras</a>
+            </div>
+        </div>
+        <div class="miUsuarioContenedor">
+            <img src="Imagenes/planta (1).png" alt="Icono paisajismo y parquizacion">
+            <div class="contenidoMiUsuario">
+                <hr>
+                <h3>PLANTAS FAVORITAS</h3>
+                <p>Ingresá para ver tus plantas guardadas.</p>
+                <button id="userPanel" onclick=showUserError()
+                    class="cctWhite20Btn">Ver mis plantas</a>
+            </div>
+        </div>
+        <div class="miUsuarioContenedor">
+            <img src="Imagenes/avatar.png" alt="Icono nuestro vivero">
+            <div class="contenidoMiUsuario">
+                <hr>
+                <h3>MIS DATOS</h3>
+                <p>Ingresá para ver y/o modificar tus datos</p>
+                <button id="userPanel" onclick=showUserError()
+                    class="cctWhite20Btn">Ver mis datos</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section id="footerCompleto">
+            <div class="footerLogo">
+                <a href="Home.html">
+                    <img src="Imagenes/Logo_DGB.png" alt="Dagoba logo">
+                </a>
+                <hr class="hrLogoFooter">
+            </div>
+            <div class="footerInfo">
+                <div class="footerInfoContenedorA">
+                    <ul>
+                        <li>
+                            <img src="Imagenes/correo-electronico-white.png" alt="Email">
+                            <div class="textosContacto">
+                                <h4>CORREO ELECTRÓNICO</h4>
+                                <p>dagobazen@dagobazen.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="Imagenes/whatsapp-white.png" alt="Whatsapp">
+                            <div class="textosContacto">
+                                <h4>WHATSAPP</h4>
+                                <p>11 1234 5678</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="Imagenes/navegador-white.png" alt="Ubicacion">
+                            <div class="textosContacto">
+                                <h4>NUESTRO VIVERO</h4>
+                                <p>Calle falsa 123, Ingeniero Maschwitz, Buenos Aires</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footerInfoContenedorB">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tienda.html">Tienda</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="login.html" id="footerLoginLink">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+                <div class="footerInfoContenedorC">
+                    <hr class="hrContenedorC">
+                    <ul>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="Imagenes/instagram-white.png"
+                                    alt="facebook"></a></li>
+                        <li><a href="https://ar.linkedin.com/" target="_blank"><img src="Imagenes/linkedin-white.png"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img
+                                    src="Imagenes/facebook-white.png" alt="facebook"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
