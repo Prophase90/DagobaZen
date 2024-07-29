@@ -17,6 +17,10 @@ header {
     height: 100vh;
 }
 
+header.notFound {
+    background-image: url(Imagenes/header_notfound.jpg);
+}
+
 
 
 /*------------------MENU---------Y---------BOTONES-----------*/
@@ -425,7 +429,7 @@ footer {
 .algunosProyectosTitle h2,
 .contenidoMiUsuario h3 {
     font-family: caligsa;
-    padding: 20px;
+    padding: 30px;
 }
 
 .contenidoNuestrosServicios h3,
@@ -533,7 +537,7 @@ form,
     max-width: 700px;
 }
 
-input[type="submit"] {
+/*input[type="submit"] {
     color: rgb(21, 21, 21);
     cursor: pointer;
     transition: 0.5s;
@@ -543,7 +547,7 @@ input[type="submit"]:hover {
     background-color: grey;
     color: whitesmoke;
     transition: 0.5s;
-}
+}*/
 
 textarea {
     height: 100px;
@@ -671,6 +675,11 @@ img.avatarCheckout {
     padding: 16px;
 }
 
+.container h1 {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
 span.psw {
     float: right;
     padding-top: 16px;
@@ -773,7 +782,6 @@ span.psw {
     }
 
     .cancelbtnlogin,
-    .cancelbtnsignup,
     .signinbtn {
         width: 100%;
     }
@@ -864,7 +872,7 @@ span.psw {
     right: 0;
     background-color: whitesmoke;
     border-radius: 0px 0px 10px 10px;
-    max-height: 100vh;
+    max-height: 80vh;
     overflow-y: auto;
     transition: 0.5s;
 }
@@ -1096,6 +1104,18 @@ span.psw {
         top: 11%;
     }
 
+    #principal {
+        padding: 5rem 0rem 0rem 8rem;
+    }
+
+    .h1Header {
+        font-size: 45pt;
+    }
+
+    .h3Header {
+        font-size: 18pt;
+    }
+
 }
 
 
@@ -1107,6 +1127,21 @@ span.psw {
         position: fixed;
         width: 100%;
         z-index: 3;
+    }
+
+    #acercaNuestro,
+    #nuestrosServicios,
+    #sobreNosotros,
+    #tiendaDagoba,
+    #contactanos,
+    #miUsuario {
+        padding-top: 70px; /* Ajusta esto si tu menú es más pequeño en dispositivos móviles */
+        margin-top: -70px; /* Ajusta esto si tu menú es más pequeño en dispositivos móviles */
+    }
+
+    #nuestrosServicios,
+    #miUsuario {
+        background: linear-gradient(to bottom, rgba(241, 241, 241, 0) 0%, rgba(241, 241, 241, 0) 70px, rgb(241, 241, 241) 70px, rgb(241, 241, 241) 100%);
     }
 
     .menu {
@@ -1177,20 +1212,24 @@ span.psw {
         padding: 10rem 0rem 0rem 5rem;
     }
 
-    #principal>div {
+    /*#principal>div {
         max-width: 500px;
-    }
+    }*/
 
     .h1Header {
-        font-size: 45pt;
+        font-size: 40pt;
     }
 
     .h3Header {
-        font-size: 18pt;
+        font-size: 16pt;
     }
 
     .contenidoCarrito {
         top: 9.5%;
+    }
+
+    .titleServicios hr {
+        margin-top: 75px;
     }
 
     .acercaNuesrtoContenedorA,
@@ -1369,6 +1408,24 @@ span.psw {
 
     #infoServicios h4 {
         font-size: 18pt;
+    }
+
+    .container h1 {
+    font-size: 1.2em;
+    }
+
+    .container p {
+        font-size: 10pt;
+    }
+
+    .signupbtn,
+    .signinbtn,
+    .cancelbtn,
+    .cancelbtnpay,
+    .cancelbtnlogin,
+    .cancelbtnsignup,
+    .pagarBtn {
+        font-size: 12pt;
     }
 
 }

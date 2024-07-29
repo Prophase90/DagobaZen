@@ -335,8 +335,15 @@ var enlacesCarrito = document.querySelectorAll('.kart-black, .kart-default');
 enlacesCarrito.forEach(function (enlace) {
     enlace.addEventListener('click', function (event) {
         event.preventDefault();
-        document.querySelector('.contenidoCarrito').style.display = 'block';
-        cargarCarrito(); // Cargar el carrito al abrirlo
+        var carrito = document.querySelector('.contenidoCarrito');
+        var isCarritoVisible = carrito.style.display === 'block';
+        
+        if (isCarritoVisible) {
+            carrito.style.display = 'none'; // Cerrar el carrito si ya está abierto
+        } else {
+            carrito.style.display = 'block'; // Abrir el carrito si está cerrado
+            cargarCarrito(); // Cargar el carrito al abrirlo
+        }
     });
 });
 
