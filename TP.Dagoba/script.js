@@ -322,7 +322,7 @@ orderBtns.forEach(function (boton) {
             };
 
             agregarAlCarrito(producto); // Agregar producto al carrito
-            document.querySelector('.contenidoCarrito').style.display = 'block';
+            /*document.querySelector('.contenidoCarrito').style.display = 'block';*/
 
         } else {
             errorTienda.style.display = 'block'; // Mostrar modal de error de tienda
@@ -445,6 +445,7 @@ function toggleMenu(event) {
     var menu = document.querySelector('.menu');
     if (menu) {
         menu.classList.toggle('active');
+        document.querySelector('.contenidoCarrito').style.display = 'none';
     }
 }
 
@@ -593,8 +594,8 @@ function showSlides(n) {
         slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+        dots[i].className = dots[i].className.replace(" activar", "");
     }
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+    dots[slideIndex - 1].className += " activar";
 }
