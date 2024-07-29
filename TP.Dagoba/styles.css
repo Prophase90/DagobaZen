@@ -1107,7 +1107,7 @@ span.psw {
 
 /***************************************RESPONSIVE*******************************************/
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1370px) {
 
     .menu li {
         margin: 5px;
@@ -1444,7 +1444,7 @@ span.psw {
 
 }
 
-/**************************** RESPONSIVE POR HEIGHT ***************************************/
+/**************************** RESPONSIVE POR HEIGHT ***************************************
 
 @media screen and (max-height: 670px) {
     #principal {
@@ -1474,3 +1474,5 @@ span.psw {
     }
 
 }
+
+*/
