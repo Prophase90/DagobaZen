@@ -70,8 +70,6 @@ header.notFound {
 .menu li span {
     background-color: green;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
     align-items: end;
     color: whitesmoke;
     padding: 3px 8px;
@@ -80,15 +78,11 @@ header.notFound {
 nav a,
 .footerInfoContenedorB a {
     text-decoration: none;
-    color: rgb(196, 196, 196);
-    font-size: 20px;
+    color: whitesmoke;
+    font-size: 18px;
     padding: 10px;
     border-bottom: solid transparent;
     transition: border-color 0.5s;
-}
-
-nav a {
-    color: whitesmoke;
 }
 
 nav a.activo {
@@ -689,9 +683,14 @@ img.avatarCheckout {
     padding-top: 0;
 }
 
-.container h1 {
+.container h1,
+.containerPago h1 {
     padding-bottom: 10px;
     text-align: center;
+}
+
+.containerPago h1 {
+    padding: 10px;
 }
 
 span.psw {
@@ -746,7 +745,7 @@ span.psw {
 
 .close {
     position: absolute;
-    right: 25px;
+    right: 10px;
     top: 0;
     color: #000;
     font-size: 35px;
@@ -796,6 +795,7 @@ span.psw {
         display: block;
         float: none;
         text-align: center;
+        font-size: 14px;
     }
 
     .cancelbtnlogin,
@@ -1030,19 +1030,17 @@ span.psw {
     user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* Position the "next button" to the right */
 .prev {
     left: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+
 .prev:hover,
 .next:hover {
     background-color: black;
@@ -1065,7 +1063,6 @@ span.psw {
     align-items: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
     color: whitesmoke;
     font-size: 12px;
@@ -1078,7 +1075,7 @@ span.psw {
     text-align: center;
 }
 
-/* The dots/bullets/indicators */
+
 .dot {
     cursor: pointer;
     height: 15px;
@@ -1095,7 +1092,6 @@ span.psw {
     background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -1112,6 +1108,31 @@ span.psw {
 }
 
 
+/************************************BOTON SUBIR*********************************************/
+
+#myBtnUp {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    z-index: 1000;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: whitesmoke;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.5s;
+    font-weight: bold;
+  }
+  
+  #myBtnUp:hover {
+    background-color: gray;
+    transition: 0.5s;
+  }
+
 /***************************************RESPONSIVE*******************************************/
 
 @media screen and (max-width: 1370px) {
@@ -1126,7 +1147,7 @@ span.psw {
     }
 
     #principal {
-        padding: 2.5rem 0rem 0rem 8rem;
+        padding: 0rem 0rem 0rem 8rem;
     }
 
     .h1Header {
@@ -1441,12 +1462,9 @@ span.psw {
         font-size: 18pt;
     }
 
-    .container h1 {
-    font-size: 1.2em;
-    }
-
     .container p {
-        font-size: 10pt;
+        font-size: 14px;
+        text-align: center;
     }
 
     .signupbtn,
