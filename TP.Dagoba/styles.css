@@ -87,6 +87,10 @@ nav a,
     transition: border-color 0.5s;
 }
 
+nav a {
+    color: whitesmoke;
+}
+
 nav a.activo {
     padding: 10px;
     border-style: solid;
