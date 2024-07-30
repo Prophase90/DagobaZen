@@ -159,7 +159,7 @@ nav a:not(:has(img)):hover,
 }
 
 #principal {
-    padding: 8rem 0rem 0rem 15rem;
+    padding: 6rem 0rem 0rem 15rem;
 }
 
 #principal>div {
@@ -1177,8 +1177,8 @@ span.psw {
     #tiendaDagoba,
     #contactanos,
     #miUsuario {
-        padding-top: 70px; /* Ajusta esto si tu menú es más pequeño en dispositivos móviles */
-        margin-top: -70px; /* Ajusta esto si tu menú es más pequeño en dispositivos móviles */
+        padding-top: 70px;
+        margin-top: -70px;
     }
 
     #nuestrosServicios,
@@ -1251,12 +1251,8 @@ span.psw {
     }
 
     #principal {
-        padding: 10rem 0rem 0rem 5rem;
+        padding: 0rem 0rem 0rem 5rem;
     }
-
-    /*#principal>div {
-        max-width: 500px;
-    }*/
 
     .h1Header {
         font-size: 40pt;
@@ -1371,7 +1367,7 @@ span.psw {
     }
 
     #principal {
-        padding: 10rem 0rem 0rem 4rem;
+        padding: 7rem 0rem 0rem 4rem;
     }
 
     .h1Header {
@@ -1478,36 +1474,3 @@ span.psw {
     }
 
 }
-
-/**************************** RESPONSIVE POR HEIGHT ***************************************
-
-@media screen and (max-height: 670px) {
-    #principal {
-        padding: 6rem 0rem 0rem 2rem;
-    }
-
-    .h1Header {
-        display: none;
-    }
-
-    .cctWhiteHeader {
-        margin-top: 0;
-    }
-}
-
-@media screen and (max-height: 420px) {
-
-    #principal {
-        padding: 2rem 0rem 0rem 2rem;
-    }
-}
-
-@media screen and (max-height: 320px) {
-
-    #principal {
-        padding: 1rem 0rem 0rem 2rem;
-    }
-
-}
-
-*/
