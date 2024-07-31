@@ -1358,6 +1358,23 @@ span.psw {
     .formularioPago {
         flex-direction: column;
     }
+
+    nav a {
+        font-size: 95%;
+    }
+
+    #principal,
+    #principalNF {
+        padding: 4rem 0rem 0rem 4rem;
+    }
+
+    .h1Header {
+        font-size: 42pt;
+    }
+
+    .h3Header {
+        font-size: 17pt;
+    }
 }
 
 
