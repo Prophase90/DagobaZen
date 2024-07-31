@@ -147,6 +147,7 @@ nav a:not(:has(img)):hover,
 .cctWhite20Btn,
 .cctWhite20BtnUbi {
     cursor: pointer;
+    border-color: gray;
 }
 
 .cctWhite20:hover,
@@ -158,11 +159,13 @@ nav a:not(:has(img)):hover,
     transition: border-color, background-color 0.5s;
 }
 
-#principal {
+#principal,
+#principalNF {
     padding: 6rem 0rem 0rem 15rem;
 }
 
-#principal>div {
+#principal>div,
+#principalNF>div {
     max-width: 500px;
 }
 
@@ -1366,7 +1369,8 @@ span.psw {
         font-size: 90%;
     }
 
-    #principal {
+    #principal,
+    #principalNF {
         padding: 7rem 0rem 0rem 4rem;
     }
 
@@ -1416,7 +1420,8 @@ span.psw {
         font-size: 85%;
     }
 
-    #principal {
+    #principal,
+    #principalNF {
         padding: 10rem 0rem 0rem 0.5rem;
     }
 
