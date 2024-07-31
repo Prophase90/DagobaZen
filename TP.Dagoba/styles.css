@@ -1150,7 +1150,7 @@ span.psw {
     }
 
     #principal {
-        padding: 0rem 0rem 0rem 8rem;
+        padding: 2rem 0rem 0rem 8rem;
     }
 
     .h1Header {
@@ -1254,7 +1254,7 @@ span.psw {
     }
 
     #principal {
-        padding: 0rem 0rem 0rem 5rem;
+        padding: 6rem 0rem 0rem 5rem;
     }
 
     .h1Header {
@@ -1357,23 +1357,6 @@ span.psw {
 @media screen and (max-width: 900px) {
     .formularioPago {
         flex-direction: column;
-    }
-
-    nav a {
-        font-size: 95%;
-    }
-
-    #principal,
-    #principalNF {
-        padding: 6rem 0rem 0rem 4rem;
-    }
-
-    .h1Header {
-        font-size: 42pt;
-    }
-
-    .h3Header {
-        font-size: 17pt;
     }
 }
 
